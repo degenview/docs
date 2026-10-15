@@ -1,0 +1,15 @@
+{
+  "name": "degenview-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "End-user documentation for DegenView",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.5.0"
+  }
+}
