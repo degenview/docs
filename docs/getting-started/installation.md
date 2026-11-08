@@ -12,6 +12,18 @@ Works on Apple Silicon and Intel Macs with macOS 14 or newer.
 
 The app is signed and notarized by Apple. Keep it in **Applications** so it can update itself.
 
+### With Homebrew
+
+If you use [Homebrew](https://brew.sh), install the same app from the DegenView tap:
+
+```bash
+brew install --cask degenview/degenview/degenview@rc
+```
+
+`degenview@rc` follows release candidates and final releases. `degenview/degenview/degenview` installs the latest final release only and works once one is published. Naming the cask in full is enough; you do not need to trust the tap separately. If you run `brew tap degenview/degenview` first and then install by the short name, Homebrew 7 asks you to run `brew trust degenview/degenview`.
+
+DegenView updates itself, so `brew upgrade` skips it. To remove the app together with its data, cache and settings, run `brew uninstall --zap --cask degenview@rc`. API keys in the Keychain stay.
+
 ## Windows
 
 Works on Windows x64 and ARM64.

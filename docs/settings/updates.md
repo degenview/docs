@@ -41,7 +41,7 @@ The button reads **View Release** and you download the new version by hand when:
 
 ## By system
 
-- **macOS:** keep DegenView in Applications. Updates are checked against the developer's signature and Apple's notarization.
+- **macOS:** keep DegenView in Applications. Updates are checked against the developer's signature and Apple's notarization. This also holds when you installed with Homebrew: it puts the app in Applications, and `brew upgrade` skips it.
 - **Windows and Linux:** these builds are not signed by a developer certificate. Self-update replaces the app's own file, so it must sit in a folder you own. It has been tested in automated tests but not yet taken in a real session. On Linux only the program is updated, not the icon or menu entry.
 
 Before installing, DegenView checks that the release is signed and that the file matches its published checksum. If you have unsaved Pine edits when you quit to update, it asks first. See also [Platforms](/reference/platforms).
