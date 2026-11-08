@@ -53,7 +53,7 @@ Use the arrow at the right of the tabs to hide the drawer.
 
 ## If a file changes outside DegenView
 
-You can edit `.pine` files in another editor. DegenView picks up changes within a couple of seconds. If you have unsaved edits too, a banner offers **Reload from disk** or **Keep my version**.
+You can edit `.pine` files in another editor. DegenView picks up changes within a couple of seconds. If you have unsaved edits too, a banner offers **Reload from disk** or **Keep my version**. A coding agent can do the same: see [Vibe-code with your own agent](/pine/overview#vibe-code-with-your-own-agent).
 
 ## Editor appearance
 

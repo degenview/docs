@@ -46,6 +46,16 @@ Each script is a plain text file ending in `.pine`, in a **Scripts** folder insi
 
 You can back these files up or edit them in another editor. DegenView notices changes made outside the app. See [Writing scripts](/pine/writing-scripts).
 
+### Vibe-code with your own agent
+
+Because scripts are plain files, you can also vibe-code them with a coding agent such as Claude Code, Codex or Cursor. Point the agent at the **Scripts** folder (make it the agent's working folder), then describe the script you want.
+
+- New and changed `.pine` files show up in the Pine Studio list within a couple of seconds. Open one to see it on the preview chart.
+- Errors appear in the **Problems** tab. Paste them back to the agent, or connect it through the [MCP server](/mcp/setup) so it can compile a script and read the diagnostics itself.
+- Start every file with `//@version=6`, and tell the agent which features are not supported. See [What Pine supports](/pine/language).
+- Let the agent edit only the `.pine` files. Leave the **ScriptMetadata** folder next to **Scripts** alone, because it holds each script's saved revisions and settings.
+- If the same script is open with unsaved edits, DegenView asks whether to **Reload from disk** or **Keep my version**.
+
 ## Where to go next
 
 - [Writing scripts](/pine/writing-scripts): the editor, the preview chart and the drawer tabs.
