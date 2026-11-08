@@ -41,7 +41,19 @@ The Windows builds are not code-signed, so SmartScreen may warn you. Choose **Mo
 Works on x64 and arm64 with a reasonably recent distribution (glibc 2.35 or newer: Ubuntu 22.04, Debian 12, Fedora 36 and later).
 
 - **Tarball.** Unpack it and run `degenview`. To get a launcher and icon, copy `degenview` to `~/.local/bin`, `degenview.png` to `~/.local/share/icons/hicolor/512x512/apps` and `degenview.desktop` to `~/.local/share/applications`.
-- **Flatpak.** Install the `.flatpak` from the release page (`flatpak install --user`). Use this on older distributions such as RHEL 9. The Flatpak runs in a sandbox and cannot update itself; download new versions from the releases page.
+- **Flatpak.** Use this on older distributions such as RHEL 9. It runs in a sandbox and is updated with `flatpak update` once you add the DegenView repository (see below). A `.flatpak` file from the release page also installs, but it has no remote and does not update.
+
+### With Flatpak
+
+The runtime comes from Flathub, so [set Flathub up](https://flathub.org/setup) first. Then add the DegenView repository once and install:
+
+```bash
+flatpak remote-add --if-not-exists degenview https://flatpak.degenview.app/degenview.flatpakrepo
+flatpak install degenview es.nico.degenview//beta
+flatpak run es.nico.degenview
+```
+
+`beta` follows release candidates and final releases. `es.nico.degenview//stable` follows final releases only and works once one is published. Update with `flatpak update`. The repository is signed; Flatpak checks the signature on every install and update, and the key's fingerprint is on [flatpak.degenview.app](https://flatpak.degenview.app).
 
 ## First launch
 
