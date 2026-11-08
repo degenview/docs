@@ -6,7 +6,7 @@ DegenView runs on macOS, Windows and Linux, and on Linux also as a Flatpak. Most
 
 | | macOS | Windows | Linux | Flatpak |
 |---|---|---|---|---|
-| Install | Disk image or zip | Installer or portable zip | Tarball | `.flatpak` file |
+| Install | Disk image, zip or Homebrew | Installer or portable zip | Tarball | `.flatpak` file |
 | Window and tabs | Own tab strip, system window buttons, menu bar | Own tab strip and title bar, no menu bar | Own tab strip and title bar, no menu bar | Same as Linux |
 | Shortcut key | ⌘ | Ctrl | Ctrl | Ctrl |
 | Secret storage (API keys) | Keychain | None yet | Secret Service | App-private store |
