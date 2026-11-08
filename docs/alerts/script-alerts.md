@@ -14,7 +14,7 @@ You need a script with at least one `alert()` or `alertcondition()` call, applie
 
 ![The Create Script Alert sheet](/images/alerts/script-alert.png)
 
-The sheet says where the alert will run, for example "Fires on live bars of BTC/USDT · 1h". It is tied to that chart, that symbol and that timeframe.
+The sheet says where the alert will run, for example "Fires on live bars of BTCUSDT · 1h". It is tied to that chart, that symbol and that timeframe.
 
 ::: warning The sheet may say it cannot arm yet
 **Create Alert** is unavailable if the indicator is no longer on the chart, its script has not loaded yet, the script has no alert calls, or an active alert for it already exists on this chart.
