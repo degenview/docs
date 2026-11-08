@@ -8,10 +8,30 @@ The top of each card is its header, left to right:
 
 - A grip to drag the card to a new place.
 - The source logo, the market name and the last price. Click any of them to open **Chart settings**.
-- Indicator chips and a **+** button. See [Indicators](/charts/indicators).
-- On the right: the chart-type button ([Chart types](/charts/chart-types)), a star for **Favorites**, a camera for [snapshots](/charts/snapshots), a bell for [price alerts](/alerts/price-alerts), and the percent change across the bars you see now. Prediction-market and CoinMarketCap charts have no chart-type button or bell.
+- Indicator chips. See [Indicators](/charts/indicators).
+- On the right: a star for **Favorites**, a camera for [snapshots](/charts/snapshots), a bell for [price alerts](/alerts/price-alerts), and the percent change across the bars you see now. Prediction-market and CoinMarketCap charts have no bell.
+
+The chart type and the indicator picker are not in the header. They are buttons in the toolbar above the cards, and they act on the focused chart.
 
 Under the header is the plot, with the price axis on the right and the time axis at the bottom. A box of open, high, low and close values shows at the top left of the plot while you hover. A **Replay** badge appears in the header during [replay](/trading/replay). Right-click anywhere for the menus described in [Chart settings & templates](/charts/settings-templates).
+
+## The toolbar
+
+The toolbar runs across the top of every chart tab.
+
+![The toolbar](/images/charts/toolbar.png)
+
+From the left:
+
+- **1H, 1D, 1W, 1M, 3M, 1Y** set the candle size for every chart in the tab. See [Adding charts](/markets/adding-charts#timeframe).
+- The **chart-type** button opens the [chart type](/charts/chart-types) menu.
+- **Indicators** opens the [indicator picker](/charts/indicators).
+- **Replay** starts and stops [historical replay](/trading/replay). While a replay is open it is lit.
+- **Undo** and **Redo** step back and forward through changes to drawings, indicators, scripts and zooms. They are greyed out when there is nothing to undo or redo. The keyboard shortcuts do the same (see [Keyboard shortcuts](/reference/shortcuts)).
+
+At the right, the layout menu shows the layout name (see [Layouts](/workspace/layouts)), followed by **Chart settings**, **Portfolio Tracker**, **Pine Studio**, the watchlist button and **Add Chart**.
+
+Chart type, **Indicators** and **Chart settings** act on the focused chart, the one with the highlighted frame. Click a chart to focus it. They are greyed out when there is no market chart to act on, for instance in an empty tab. When the window is narrow, **Indicators**, **Replay** and **Add Chart** drop their labels and keep their icons.
 
 ## Move and zoom
 

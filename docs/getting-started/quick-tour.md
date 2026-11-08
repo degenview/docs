@@ -12,11 +12,11 @@ Add a few more charts. Each tab holds a grid of charts that share one timeframe.
 
 ## 2. Pick a timeframe and chart type
 
-Use **1H, 1D, 1W, 1M, 3M, 1Y** at the top left to change the candle size for every chart in the tab. Use the chart-type button in a chart's header to switch between candles, bars, lines, Heikin Ashi, Renko and more. See [Chart types](/charts/chart-types).
+Use **1H, 1D, 1W, 1M, 3M, 1Y** at the top left to change the candle size for every chart in the tab. Click a chart, then use the chart-type button next to the timeframes to switch between candles, bars, lines, Heikin Ashi, Renko and more. See [Chart types](/charts/chart-types).
 
 ## 3. Add indicators
 
-Click the **+** next to a chart's title to add Volume, RSI, EMA, Bollinger Bands or Trend Flips. See [Indicators](/charts/indicators).
+Click a chart, then **Indicators** in the toolbar. The picker has 25 built-in indicators, from Volume and RSI to Ichimoku Cloud and MACD, with a preview of each. See [Indicators](/charts/indicators).
 
 ## 4. Draw on the chart
 

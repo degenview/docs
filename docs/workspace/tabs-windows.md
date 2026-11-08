@@ -4,7 +4,7 @@ DegenView keeps your work in tabs. Each tab holds its own set of charts, and you
 
 ## What the tab strip shows
 
-Most tabs are chart tabs. Two special tabs also exist, one of each: the Portfolio Tracker and Pine Studio. Open them from the two round buttons in the toolbar.
+Most tabs are chart tabs. Two special tabs also exist, one of each: the Portfolio Tracker and Pine Studio. Open them from the **Portfolio Tracker** and **Pine Studio** buttons at the right of the toolbar.
 
 A chart tab shows the market logo, symbol, an up or down arrow, live price, percent change and the layout name after a slash. It follows the tab's focused chart. Prediction markets and CoinMarketCap charts show no price.
 

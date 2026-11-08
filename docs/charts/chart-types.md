@@ -4,7 +4,7 @@ A chart type is how DegenView draws the price: candles, a line, bricks and so on
 
 ## Change the type
 
-Click the chart-type button at the right of the chart header (its tooltip reads **Chart type** and the current type). Type in **Search chart types** to filter, then pick one.
+Click the chart you want to change, then click the chart-type button in the toolbar, just right of the timeframes (its tooltip reads **Chart type** and the current type). Type in **Search chart types** to filter, then pick one. The type changes on the focused chart only.
 
 You can also pick it in **Chart settings ▸ Appearance** under **Chart type ▸ Style**, where a preview and the type's own options appear below.
 
@@ -38,7 +38,7 @@ Open **Chart settings ▸ Appearance** to change colours and options.
 ## When a type is unavailable
 
 - **Volume Candles** is greyed out on CoinGecko. Hover it to read **This source reports no volume**.
-- Prediction markets and CoinMarketCap are drawn as a line. They have no chart-type button, and **Appearance** offers only the line colours.
+- Prediction markets and CoinMarketCap are drawn as a line. The chart-type button is greyed out for them, and **Appearance** offers only the line colours.
 - A saved type a market cannot show falls back to candles.
 
 ## Price-based types: what to know
