@@ -53,7 +53,7 @@ The **Watchlists** tab shows your own lists:
 | Return | Replace the chart's market with the highlighted one |
 | ⇧Return | Add the highlighted market as a new chart |
 | Tab | Switch between All, Stocks, Crypto and Watchlists |
-| Esc | Close |
+| Esc, or a click outside the sheet | Close |
 
 ::: info Names changed
 Charts and search results used to show pairs with a slash (`BTC/USDT`). They now show the exchange's own name (`BTCUSDT`). Saved charts and alerts keep working; a watchlist row keeps the name it was saved with until you re-add it.
