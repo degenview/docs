@@ -38,7 +38,7 @@ Until keys are saved, the **Stocks** section says **Set up Alpaca before adding 
 ![The CoinMarketCap settings page](/images/settings/cmc.png)
 
 ::: info Where keys are stored
-On macOS keys go to the Keychain, and on Linux to the Secret Service. On Windows the app cannot save keys yet: set the environment variables `DEGENVIEW_ALPACA_KEY_ID`, `DEGENVIEW_ALPACA_SECRET_KEY` and `DEGENVIEW_CMC_API_KEY` before starting DegenView. See [Platforms](/reference/platforms).
+On macOS keys go to the Keychain, on Linux to the Secret Service, and on Windows to Windows Credential Manager. You can also set the environment variables `DEGENVIEW_ALPACA_KEY_ID`, `DEGENVIEW_ALPACA_SECRET_KEY` and `DEGENVIEW_CMC_API_KEY` before starting DegenView; they are used when nothing is saved. See [Platforms](/reference/platforms).
 :::
 
 ## Next steps

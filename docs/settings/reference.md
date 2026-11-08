@@ -27,7 +27,7 @@ Press âŒ˜, (Ctrl+, on Windows and Linux). On macOS you can also use **Settingsâ€
 
 ## Where keys are kept
 
-On macOS, keys and secrets go to the Keychain. On Linux they go to the system's Secret Service, or an app-private store inside a Flatpak. Windows has no secret store yet, so keys you type cannot be saved. See [Platforms](/reference/platforms).
+On macOS, keys and secrets go to the Keychain. On Linux they go to the system's Secret Service, or an app-private store inside a Flatpak. On Windows they go to Windows Credential Manager. See [Platforms](/reference/platforms).
 
 ## Good to know
 

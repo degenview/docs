@@ -20,7 +20,7 @@ Editing a script pauses its alerts until you re-arm them. Open the Alerts window
 
 ## My API keys are not saved on Windows
 
-Windows has no secret store yet, so keys you type in Settings are not kept. For Alpaca and CoinMarketCap, set the keys as environment variables instead. See [Platforms](/reference/platforms).
+DegenView keeps keys in Windows Credential Manager. If Settings says a key could not be saved, check that you are signed in to a normal Windows account and that the secret is under 2560 bytes, the most Credential Manager keeps per item. A key that was saved shows under Control Panel ▸ Credential Manager ▸ Windows Credentials. As a fallback, set Alpaca and CoinMarketCap keys as environment variables. See [Platforms](/reference/platforms).
 
 ## I cannot add alerts or orders during replay
 

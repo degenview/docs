@@ -49,7 +49,7 @@ The alert's message is sent as the body. Valid JSON goes out as `application/jso
 
 ### Secrets
 
-Put a token in the URL or a header with **Use secret…** instead of typing it in. It is stored in your Keychain or secure storage and is not synced. It cannot be part of the host name.
+Put a token in the URL or a header with **Use secret…** instead of typing it in. It is stored in your Keychain on macOS, Windows Credential Manager on Windows or the Secret Service on Linux, and is not synced. It cannot be part of the host name.
 
 ### What to expect
 
@@ -58,6 +58,6 @@ Put a token in the URL or a header with **Use secret…** instead of typing it i
 - Local and private addresses are allowed.
 - Endpoints and secrets never sync to other Macs.
 
-::: warning Windows
-Secrets cannot be saved on Windows yet, so webhooks that need one will not work there.
+::: info Windows
+Windows Credential Manager keeps at most 2560 bytes per secret. An ordinary token fits; a very long one, such as a long secret of non-English characters, is refused with an error when you save it.
 :::

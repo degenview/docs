@@ -12,7 +12,7 @@ The assistant is a chat panel in Pine Studio. Describe what you want in plain wo
 
 ![The AI Assistant settings page, with provider, model and API key](/images/settings/ai.png)
 
-On macOS the key goes to the Keychain. On Linux it goes to the system's secret service. On Windows it is kept only until you quit DegenView, and you enter it again next time. **Remove Key** deletes it.
+On macOS the key goes to the Keychain, on Linux to the system's secret service, and on Windows to Windows Credential Manager. **Remove Key** deletes it.
 
 ## Use it
 
