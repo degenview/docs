@@ -2,10 +2,6 @@
 
 The assistant is a chat panel in Pine Studio. Describe what you want in plain words, and an AI model reads your script, tests its changes and proposes edits. It uses your own account with an AI provider, and it is off until you add a key.
 
-::: warning Not tested against a real model
-DegenView's developers tested the assistant against a scripted stand-in provider only. It has not been verified with a live OpenAI, Anthropic or other model. Expect rough edges and check every change before you apply it.
-:::
-
 ## Set it up
 
 1. Open **Settings ▸ AI Assistant**.
