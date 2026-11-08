@@ -18,7 +18,7 @@ Use any of these:
 
 - Click the **Pine Studio** icon in the toolbar, next to **Portfolio Tracker**.
 - Right-click a script's own pane on a chart and choose **Open Pine Studio**.
-- Click **+** in a chart header, then **Pine Studio…** at the bottom of the menu. This opens **Chart settings ▸ Scripts**.
+- Click **Indicators** in the toolbar, then **Open Pine Studio** in the picker's sidebar.
 - In **Chart settings ▸ Scripts**, click **Pine Studio** (**Open Pine Studio** when you have no scripts yet).
 
 Pine Studio is one tab. If it is already open, DegenView switches to it.

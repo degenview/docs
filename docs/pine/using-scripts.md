@@ -6,7 +6,7 @@ Once a script is saved, you can run it on any chart, alongside the built-in indi
 
 Pick whichever is nearest:
 
-1. **From the + menu.** Click **+** in the chart header (tooltip **Add Indicator**), search **Search indicators and scripts**, and click a script. Built-in indicators come first, then your saved indicators and strategies. Libraries are not listed, and line charts have no scripts section. A script already on the chart shows **On chart**. Click it again to **Add another copy to this chart**.
+1. **From the indicator picker.** Click a chart, then **Indicators** in the toolbar. Your saved indicators and strategies are under **My scripts**, or search for one by name. Click it, then **Add to chart**. Libraries are not listed, and line charts offer no scripts. A script already on the chart shows **On chart**, and its button reads **Add another copy**. See [Indicators](/charts/indicators).
 2. **From chart settings.** Open **Chart settings ▸ Scripts**. Switch a script on under **Available** (**Your scripts** while none runs yet). Scripts already running are under **On this chart**.
 3. **From Pine Studio.** Right-click a script in the list and choose **Add to Chart**. It goes to the chart you have focused.
 

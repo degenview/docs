@@ -21,7 +21,7 @@ features:
     details: Search Binance, Coinbase, CoinGecko, DEXScreener, Alpaca stocks, Polymarket, Kalshi and CoinMarketCap indices from one box.
     link: /markets/adding-charts
   - title: Charts you control
-    details: 18 chart types, five built-in indicators, four price scales, linked charts, templates and one-click snapshots.
+    details: 18 chart types, 25 built-in indicators, four price scales, linked charts, templates and one-click snapshots.
     link: /charts/charts
   - title: Over 80 drawing tools
     details: Lines, Fibonacci, Gann, patterns, Elliott waves, forecasts, measurers, notes and more, all anchored to time and price.

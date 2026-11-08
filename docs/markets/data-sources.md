@@ -15,7 +15,7 @@ DegenView gets candles and quotes straight from public market-data providers. Mo
 | **Kalshi** | Predictions | Drawn as a probability line. |
 | **CoinMarketCap** | CoinMarketCap | Altcoin Season Index, Altcoin Season History, Fear & Greed Index and Fear & Greed History. |
 
-Volume exists for Binance, Coinbase, DEXScreener and Alpaca only. Prediction markets and CoinMarketCap charts are drawn as lines: they have no chart-type choice and no volume bars, and the indicator menu offers no Pine scripts on them. CoinMarketCap charts also have no indicators or scripts, so their chart settings offer only **Appearance** and **Canvas**.
+Volume exists for Binance, Coinbase, DEXScreener and Alpaca only. Prediction markets and CoinMarketCap charts are drawn as lines: they have no chart-type choice and no volume bars, and the indicator picker offers no Pine scripts on them. CoinMarketCap charts also have no indicators or scripts, so their chart settings offer only **Appearance** and **Canvas**.
 
 ## How fresh is the data
 

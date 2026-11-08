@@ -4,7 +4,7 @@ Replay rewinds a chart to an earlier moment and plays the market forward bar by 
 
 ## Start a replay
 
-Click the **Historical Replay** tile (the clock with an arrow) in the tool sidebar. It needs a market chart, and it applies to every chart in the tab. The replay bar opens with **Choose a start** and these choices:
+Click **Replay** in the toolbar (its tooltip reads **Historical Replay**). It needs a market chart, and it applies to every chart in the tab. The replay bar opens with **Choose a start** and these choices:
 
 ![The replay start choices](/images/trading/replay-start.png)
 
@@ -28,7 +28,7 @@ The start snaps to the nearest bar at or before your choice. Replay can only go 
 - **Speed**: 0.5×, 1×, 2×, 5×, 10×, 20×, 50× or **Max**.
 - **Bars**: **Auto** or **1 bar**. Both step through the chart's own bars.
 - **Choose a new starting point** to pick again.
-- **Close Replay**, or **Live**, to return to the live market.
+- **Close Replay**, or **Live**, to return to the live market. **Replay** in the toolbar closes it too while it is lit.
 
 The bar shows the state: **Choose a start**, **Pick a start**, **Paused**, **Playing**, **Ended** or **Loading history**.
 
