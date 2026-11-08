@@ -12,7 +12,9 @@ Add a few more charts. Each tab holds a grid of charts that share one timeframe.
 
 ## 2. Pick a timeframe and chart type
 
-Use **1H, 1D, 1W, 1M, 3M, 1Y** at the top left to change the candle size for every chart in the tab. Click a chart, then use the chart-type button next to the timeframes to switch between candles, bars, lines, Heikin Ashi, Renko and more. See [Chart types](/charts/chart-types).
+The symbol button at the far left of the toolbar names the focused chart's market; click it (or press ⌘K) to switch the chart to another one. See [Changing a chart's symbol](/markets/symbol-search).
+
+Use **1H, 1D, 1W, 1M, 3M, 1Y** next to it to change the candle size for every chart in the tab. Click a chart, then use the chart-type button next to the timeframes to switch between candles, bars, lines, Heikin Ashi, Renko and more. See [Chart types](/charts/chart-types).
 
 ## 3. Add indicators
 

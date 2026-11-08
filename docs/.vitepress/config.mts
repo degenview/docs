@@ -39,6 +39,7 @@ export default defineConfig({
         text: 'Markets & data',
         items: [
           { text: 'Adding charts', link: '/markets/adding-charts' },
+          { text: 'Changing a chart\'s symbol', link: '/markets/symbol-search' },
           { text: 'Watchlists', link: '/markets/watchlists' },
           { text: 'Data sources & API keys', link: '/markets/data-sources' },
         ],

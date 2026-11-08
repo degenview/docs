@@ -14,6 +14,7 @@ Shortcuts that act on a chart use the focused chart, and are ignored while you t
 | Previous tab | ⌃⇧Tab | Ctrl+Shift+Tab |
 | Open Settings | ⌘, | Ctrl+, |
 | Save the layout (or the script in Pine Studio) | ⌘S | Ctrl+S |
+| Search for a symbol (change the focused chart's market) | ⌘K | Ctrl+K |
 | Undo | ⌘Z | Ctrl+Z |
 | Redo | ⇧⌘Z | Ctrl+Y or Ctrl+Shift+Z |
 

@@ -31,9 +31,13 @@ Markets you picked before show up under **Recent**. Use **Clear**, or right-clic
 
 Prediction results are grouped by event. Tick several choices of one event, or tick the box on the event heading to select them all, to get one chart with a coloured line per choice. You can only combine choices from the same event. Such a chart is saved with your layout, but it cannot be stored in a watchlist.
 
+## Changing a chart instead
+
+To point an existing chart at another market, use the symbol button at the left of the toolbar (or ⌘K) rather than adding a second chart. See [Changing a chart's symbol](/markets/symbol-search).
+
 ## Timeframe
 
-The timeframe buttons at the top left of the tab (**1H, 1D, 1W, 1M, 3M, 1Y**) apply to every chart in that tab. There are no minute timeframes.
+The timeframe buttons in the toolbar (**1H, 1D, 1W, 1M, 3M, 1Y**) apply to every chart in that tab. There are no minute timeframes.
 
 ## Next steps
 
