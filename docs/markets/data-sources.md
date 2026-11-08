@@ -1,51 +1,47 @@
 # Data sources
 
-DegenView pulls market data from several sources. Most need no setup; only stocks require an
-API key.
+DegenView gets candles and quotes straight from public market-data providers. Most need no setup. Only stock charts need free Alpaca keys, and CoinMarketCap keys are optional.
 
-## Crypto
+## Providers
 
-Crypto charts are available from four sources, searchable side by side:
+| Provider | Section in Add Chart | Good to know |
+| --- | --- | --- |
+| **Binance** | Crypto | Live candle updates. Older history loads as you scroll back. |
+| **Coinbase** | Crypto | Refreshes every few seconds. Older history loads as you scroll back. |
+| **DEXScreener** | Crypto | Search comes from DEXScreener and candles from GeckoTerminal, which serves about 180 days on its free tier. Longer timeframes are shallow. |
+| **CoinGecko** | Crypto | No volume and no older history. Rate-limited, so it refreshes more slowly. |
+| **Alpaca (IEX)** | Stocks | US stocks and ETFs on Alpaca's free IEX feed. Needs keys. IEX is a single exchange, so volume can be lower than consolidated figures. |
+| **Polymarket** | Predictions | Drawn as a probability line. Has a **Trending on Polymarket** list. |
+| **Kalshi** | Predictions | Drawn as a probability line. |
+| **CoinMarketCap** | CoinMarketCap | Altcoin Season Index, Altcoin Season History, Fear & Greed Index and Fear & Greed History. |
 
-- **Binance** — spot pairs, with real-time WebSocket updates.
-- **Coinbase** — spot pairs, with real-time WebSocket updates.
-- **CoinGecko** — broad crypto coverage.
-- **DEXScreener** — decentralized-exchange pairs, with historical candles from GeckoTerminal.
+Volume exists for Binance, Coinbase, DEXScreener and Alpaca only. Prediction markets and CoinMarketCap charts are drawn as lines: they have no chart-type choice and no volume bars, and the indicator menu offers no Pine scripts on them. CoinMarketCap charts also have no indicators or scripts, so their chart settings offer only **Appearance** and **Canvas**.
 
-No key is required for any of them.
+## How fresh is the data
 
-## Stocks
+Only Binance streams live candles. Every other provider is polled on a timer, more slowly for rate-limited ones. If a refresh fails, the chart keeps the last data and shows a pill such as **Couldn't refresh · showing the last result**. Background tabs and hidden windows pause their feeds.
 
-US equities come through **Alpaca's IEX feed**. This is the one source that needs credentials —
-a free Alpaca account with API keys.
+## Set up Alpaca for stocks
 
-- On macOS, store the keys in Keychain (Settings ▸ API Keys).
-- On Windows and Linux, set the `DEGENVIEW_ALPACA_KEY_ID` and
-  `DEGENVIEW_ALPACA_SECRET_KEY` environment variables.
+1. Open **Settings ▸ Alpaca**. The page walks you through **Getting your keys**: create a free account and generate a key in the API Keys section of the Alpaca dashboard.
+2. Paste **API Key ID** and **Secret Key**, then click **Save**. The badge changes to **Keys saved**.
+3. Use **Remove Keys** to delete them.
 
-See [Installation](/getting-started/installation) for the exact commands.
+![The Alpaca settings page](/images/settings/alpaca.png)
 
-## Prediction markets
+Until keys are saved, the **Stocks** section says **Set up Alpaca before adding a stock chart.** and offers **Open Settings**.
 
-**Polymarket** and **Kalshi** events are charted as probabilities. These are prediction
-markets — instead of a price, you watch the market's implied chance of an outcome. No key
-needed.
+## CoinMarketCap key (optional)
 
-## CoinMarketCap indices
+**Settings ▸ CoinMarketCap** works in **Public API mode** without a key. A key only raises rate limits. **Test Connection** checks it.
 
-Two market-wide indices are available, historical or latest:
+![The CoinMarketCap settings page](/images/settings/cmc.png)
 
-- **Altcoin Season** — whether altcoins are outperforming Bitcoin.
-- **Crypto Fear and Greed** — overall market sentiment.
+::: info Where keys are stored
+On macOS keys go to the Keychain, and on Linux to the Secret Service. On Windows the app cannot save keys yet: set the environment variables `DEGENVIEW_ALPACA_KEY_ID`, `DEGENVIEW_ALPACA_SECRET_KEY` and `DEGENVIEW_CMC_API_KEY` before starting DegenView. See [Platforms](/reference/platforms).
+:::
 
-No CoinMarketCap API key is required for the default access. Adding one in Settings is
-optional and can raise your rate limits.
+## Next steps
 
-## Live vs. refreshed data
-
-| Source | Update style |
-| --- | --- |
-| Binance, Coinbase | Real-time WebSocket |
-| Other sources | Automatic refresh |
-
-You don't have to manage any of this — DegenView picks the right update method per source.
+- [Adding charts](/markets/adding-charts)
+- [Troubleshooting](/reference/troubleshooting) if a chart stays empty.

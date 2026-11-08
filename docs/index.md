@@ -4,7 +4,7 @@ layout: home
 hero:
   name: DegenView
   text: Your markets, one dashboard
-  tagline: Watch crypto, stocks, prediction markets, and market-wide indices in charts you control — on macOS, Windows, and Linux.
+  tagline: Charts for crypto, stocks, prediction markets and market-wide indices, with drawing tools, a local Pine Script engine, alerts, paper trading and a portfolio tracker. Free and open source, for macOS, Windows and Linux.
   image:
     src: /logo.png
     alt: DegenView
@@ -13,32 +13,35 @@ hero:
       text: Get started
       link: /getting-started/introduction
     - theme: alt
-      text: Installation
-      link: /getting-started/installation
+      text: Quick tour
+      link: /getting-started/quick-tour
 
 features:
   - title: Markets in one place
-    details: Search crypto, US stocks, prediction markets, and CoinMarketCap indices side by side. Live updates keep your charts moving.
-    link: /markets/data-sources
-  - title: Charts & analysis
-    details: Candlestick and line charts with indicators, trend lines, Fibonacci retracements, a ruler, and a synchronized crosshair.
+    details: Search Binance, Coinbase, CoinGecko, DEXScreener, Alpaca stocks, Polymarket, Kalshi and CoinMarketCap indices from one box.
+    link: /markets/adding-charts
+  - title: Charts you control
+    details: 18 chart types, five built-in indicators, four price scales, linked charts, templates and one-click snapshots.
     link: /charts/charts
+  - title: Over 80 drawing tools
+    details: Lines, Fibonacci, Gann, patterns, Elliott waves, forecasts, measurers, notes and more, all anchored to time and price.
+    link: /drawings/overview
   - title: Pine Script on your machine
-    details: Write Pine Script v6 and run it locally. Your source never leaves your device.
+    details: Write and run Pine Script v6 locally in Pine Studio, with a step debugger, profiler and optional AI assistant.
     link: /pine/overview
-  - title: Portfolio tracking
-    details: Track multiple portfolios with a transaction ledger, live analytics, multi-currency reporting, and CSV import.
-    link: /portfolio/overview
-  - title: Local alerts
-    details: Price and script alerts evaluated on your own machine, with desktop notifications and optional background delivery.
+  - title: Watchlists and layouts
+    details: Keep several watchlists, save chart layouts by name and pick up where you left off in tabs and windows.
+    link: /markets/watchlists
+  - title: Alerts
+    details: Price alerts you can drag on the chart, script alerts, desktop notifications and webhooks to your own server.
     link: /alerts/price-alerts
-  - title: Practice without risk
-    details: Paper trade with market, limit, and stop orders, and replay history candle by candle.
-    link: /paper-trading
-  - title: A workspace that fits you
-    details: Tabs, windows, saved views, favorites, and light or dark themes. Your layout comes back on relaunch.
-    link: /workspace/tabs-windows
-  - title: MCP server
-    details: Optionally let an AI assistant or automation tool inspect and drive DegenView over a local, authenticated connection.
-    link: /mcp
+  - title: Practice and replay
+    details: Trade with simulated money, or replay history bar by bar with no lookahead.
+    link: /trading/paper-trading
+  - title: Portfolio tracking
+    details: A transaction ledger with live value, allocation, profit and loss and CSV import.
+    link: /portfolio/overview
+  - title: Works with AI assistants
+    details: An optional local MCP server lets tools such as Claude inspect and drive DegenView, within permissions you set.
+    link: /mcp/setup
 ---

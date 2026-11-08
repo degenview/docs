@@ -1,68 +1,48 @@
 # Installation
 
-## Download a release
+Download DegenView from the [download page](https://degenview.app/download/) or the [GitHub releases](https://github.com/degenview/degenview/releases). Pick the file for your computer.
 
-The easiest way to get DegenView is to download a prebuilt binary from the
-[releases page](https://github.com/degenview/degenview/releases). Releases are published for
-macOS (Apple Silicon and Intel), Windows, and Linux.
+## macOS
 
-Download the file for your platform, unzip it, and run it.
+Works on Apple Silicon and Intel Macs with macOS 14 or newer.
 
-## Requirements
+1. Download the `.dmg` for your chip (`arm64` for Apple Silicon, `x64` for Intel). A `.zip` is also available.
+2. Open the disk image and drag **DegenView** to **Applications**.
+3. Open it from **Applications**.
 
-- macOS (Apple Silicon or Intel), Windows (x64), or Linux (x64)
-- No API keys are required for crypto, prediction markets, CoinMarketCap indices, or Pine
-  Script. Everything works out of the box.
-- Stock data is the one exception — it needs a free Alpaca account and API keys (see below).
+The app is signed and notarized by Apple. Keep it in **Applications** so it can update itself.
 
-## Build from source
+## Windows
 
-If you prefer to build from source, install the
-[Rust toolchain](https://rustup.rs) first, then:
+Works on Windows x64 and ARM64.
 
-```bash
-git clone https://github.com/degenview/degenview
-cd degenview
-cargo run
-```
+1. Download `...windows-x64-setup.exe` (or `...windows-arm64-setup.exe` on an ARM PC). A portable `.zip` is also available.
+2. Run the installer. It installs for your user only and needs no administrator rights.
+3. Open DegenView from the Start menu.
 
-A release binary lands at `target/release/degenview` (`degenview.exe` on Windows):
+::: warning Unsigned build
+The Windows builds are not code-signed, so SmartScreen may warn you. Choose **More info**, then **Run anyway** if you trust the download.
+:::
 
-```bash
-cargo build --release
-```
+## Linux
 
-### macOS app bundle
+Works on x64 and arm64 with a reasonably recent distribution (glibc 2.35 or newer: Ubuntu 22.04, Debian 12, Fedora 36 and later).
 
-On macOS you can build a Finder-launchable app:
+- **Tarball.** Unpack it and run `degenview`. To get a launcher and icon, copy `degenview` to `~/.local/bin`, `degenview.png` to `~/.local/share/icons/hicolor/512x512/apps` and `degenview.desktop` to `~/.local/share/applications`.
+- **Flatpak.** Install the `.flatpak` from the release page (`flatpak install --user`). Use this on older distributions such as RHEL 9. The Flatpak runs in a sandbox and cannot update itself; download new versions from the releases page.
 
-```bash
-./tools/bundle.sh
-open target/DegenView.app
-```
+## First launch
 
-### Linux launcher and icon
+DegenView opens an empty tab with a search box. Click it, type a symbol such as `BTC` and pick a result to chart it. See [Adding charts](/markets/adding-charts).
 
-The Linux release tarball ships a `.desktop` launcher and a PNG icon. To get a launcher and
-dock icon:
+- **Crypto and prediction markets** need no account or key.
+- **US stocks** need a free Alpaca account and API keys. See [Data sources & API keys](/markets/data-sources).
+- **Settings** open with `⌘,` on macOS and `Ctrl+,` on Windows and Linux. See [Settings reference](/settings/reference).
 
-```bash
-install -Dm755 degenview "$HOME/.local/bin/degenview"
-install -Dm644 degenview.png "$HOME/.local/share/icons/hicolor/512x512/apps/degenview.png"
-install -Dm644 degenview.desktop "$HOME/.local/share/applications/degenview.desktop"
-```
+## Updating
 
-## Stock data (optional)
+DegenView checks for new versions and can install them from **Settings ▸ About**. See [Updates](/settings/updates) for the cases where it cannot update itself.
 
-To chart US stocks, you need a free [Alpaca](https://alpaca.markets) account and its API keys.
+## Building from source
 
-- On **macOS**, store the keys in Keychain from Settings ▸ API Keys.
-- On **Windows and Linux**, set them as environment variables:
-
-```bash
-export DEGENVIEW_ALPACA_KEY_ID="your-key-id"
-export DEGENVIEW_ALPACA_SECRET_KEY="your-secret-key"
-```
-
-See [Data sources](/markets/data-sources) for what each source provides and which ones need
-keys.
+Developers can build DegenView with Rust. The steps are in the [project README](https://github.com/degenview/degenview).

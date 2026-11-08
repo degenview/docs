@@ -1,24 +1,63 @@
-# Delivery & background
+# Delivery, background and webhooks
 
-When an alert fires, DegenView can deliver it in two ways, independently configurable:
+When an alert fires, DegenView can show a banner, play a sound, send a macOS notification and post to your own server. You set the first three in **Settings ▸ Notifications**, and webhooks in **Settings ▸ Webhooks**.
 
-- **In-app banner** — a banner inside the app.
-- **Desktop notification** — a native notification on macOS.
+## Notifications
 
-You choose which (or both) per alert.
+![The Notifications page in Settings](/images/alerts/settings-notifications.png)
 
-## Background delivery on macOS
+| Switch | What it does |
+| --- | --- |
+| **Price Alert Delivery** | Turns checking and delivering price alerts on or off |
+| **Sound** | Plays an alert sound with a notification |
+| **In-App Banners** | Shows a banner at the top of the window while DegenView is open |
+| **macOS Notifications** | Sends alerts through Notification Center, even in the background (macOS only) |
 
-Signed macOS bundles embed a small background agent that keeps price alerts, native
-notifications, and price-alert webhooks running **after you quit the app**. This means price
-alerts keep firing even when the DegenView window is closed.
+A banner goes away after six seconds, or when you click its ✕. A newer price alert replaces an older one. Banners are for price alerts only. Script alerts use a macOS notification and webhooks.
 
-::: info Pine alerts are app-only
-Pine Script alerts are evaluated while the app is running and are not part of background
-delivery.
+## Background agent (macOS)
+
+On macOS, the signed release embeds a small agent. It keeps price alerts, notifications and price-alert webhooks working **after you quit DegenView**. The **Background agent** section of the page shows its status, notification permission and last heartbeat, with **Retry Registration**, **Login Items Settings** and **Notification Settings** buttons.
+
+If the status says **Needs approval in Login Items**, switch DegenView on in System Settings. **Foreground only** means the agent is switched off. **Agent not embedded** means this build has none.
+
+Script alerts are never run by the agent. They need DegenView open. See [Script alerts](/alerts/script-alerts).
+
+::: warning Windows and Linux
+Desktop notifications, sound and the background agent exist only on macOS. Elsewhere, price alerts show as in-app banners and are checked only while DegenView is open, and script alerts reach you only through webhooks. The **Sound** switch is shown but does not play anything.
 :::
 
 ## Webhooks
 
-Price alerts can be delivered to a webhook, so you can forward them to other tools. Webhook
-delivery is configurable in Settings.
+A webhook posts an alert's message to a web address you choose, for example a chat channel or a trading bot. Open **Settings ▸ Webhooks**.
+
+![The Webhooks page in Settings](/images/alerts/settings-webhooks.png)
+
+1. Click **Add Webhook**.
+2. Enter a **Name** and the **Webhook URL**. It must start with `http://` or `https://`.
+3. Choose the method, **POST** or **PUT**. Add headers if you need them.
+4. Turn on **Enabled**, then click **Add Webhook**.
+5. Click **Test** on the row to send a test message.
+
+In a price alert's sheet, use **Send to webhooks** to choose which endpoints it posts to. Script alerts have a **Webhooks…** option on their card. Turning an endpoint off pauses it for every alert.
+
+### Message
+
+The alert's message is sent as the body. Valid JSON goes out as `application/json`, anything else as `text/plain`. The default price-alert message is `{{ticker}} alert: {{close}}`. You can use these placeholders:
+
+`{{ticker}}` `{{exchange}}` `{{open}}` `{{high}}` `{{low}}` `{{close}}` `{{volume}}` `{{time}}` `{{timenow}}` `{{interval}}`
+
+### Secrets
+
+Put a token in the URL or a header with **Use secret…** instead of typing it in. It is stored in your Keychain or secure storage and is not synced. It cannot be part of the host name.
+
+### What to expect
+
+- Each alert makes **one attempt** per webhook, with a 3 second limit. There are no retries and no redirects.
+- A price alert is not posted if more than a minute has passed since it fired.
+- Local and private addresses are allowed.
+- Endpoints and secrets never sync to other Macs.
+
+::: warning Windows
+Secrets cannot be saved on Windows yet, so webhooks that need one will not work there.
+:::

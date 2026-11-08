@@ -1,35 +1,55 @@
-# Pine Script
+# Pine Studio
 
-DegenView includes a built-in **Pine Script v6** engine. You write scripts in the Pine Script
-language, and DegenView runs them over your chart's bars — entirely on your own machine.
+Pine Studio is where you write, test and manage Pine Script indicators and strategies. Scripts run on your own computer, and you can put them on any chart.
 
-## Why it matters
+Pine Script is TradingView's scripting language. DegenView runs Pine Script v6 with its own engine and is not affiliated with TradingView.
 
-- **Local evaluation** — scripts are lexed, parsed, and evaluated in-process. No account is
-  needed, and your source never leaves your device.
-- **Renders straight onto the chart** — plots, shapes, backgrounds, and candle colors appear
-  directly on the chart.
-- **Live inputs** — typed `input.*` controls re-evaluate the script as you change them,
-  without recompiling.
+![Pine Studio with the script list, a preview chart, the Inputs tab and the code editor](/images/pine/studio.png)
 
-## What a script can draw
+## What stays on your computer
 
-A Pine Script can produce:
+Scripts are evaluated locally. Your code is not uploaded anywhere. The one exception is the [AI assistant](/pine/ai-assistant): if you use it, the open script and your message are sent to the AI provider you chose. If you never open the assistant, nothing is sent.
 
-- plots (lines, areas, and values)
-- shapes
-- background highlights
-- custom candle colors
+You need no account to use Pine Studio. The preview chart still loads candles from the market's data source, as any chart does.
 
-All of it renders on top of the chart, alongside the built-in indicators.
+## How to open it
 
-## Getting started
+Use any of these:
 
-1. Open the Script Manager (see [Script Manager](/pine/script-manager)).
-2. Write or open a script.
-3. Watch the preview chart re-run as you type.
+- Click the **Pine Studio** icon in the toolbar, next to **Portfolio Tracker**.
+- Right-click a script's own pane on a chart and choose **Open Pine Studio**.
+- Click **+** in a chart header, then **Pine Studio…** at the bottom of the menu. This opens **Chart settings ▸ Scripts**.
+- In **Chart settings ▸ Scripts**, click **Pine Studio** (**Open Pine Studio** when you have no scripts yet).
 
-## Related
+Pine Studio is one tab. If it is already open, DegenView switches to it.
 
-- [Script Manager](/pine/script-manager) — the `.pine` library, editor, and diagnostics.
-- [Inputs & alerts](/pine/inputs-alerts) — controls and script-triggered alerts.
+## The bundled examples
+
+The first time you start DegenView, Pine Studio adds nine example scripts so you have something to try:
+
+| Type | Examples |
+| --- | --- |
+| Indicators | Bollinger Squeeze, EMA Cross, Higher Timeframe Trend, MACD Histogram, Pivot Levels, RSI Zones, Stats Table, Volume Spike Alert |
+| Strategy | EMA Cross Strategy |
+
+Edit them freely. If you delete one, it stays deleted. If you already had scripts, the examples are not added.
+
+## Where your scripts live
+
+Each script is a plain text file ending in `.pine`, in a **Scripts** folder inside DegenView's data folder. Right-click a script and choose **Show in Finder** (**Show in Explorer** on Windows, **Show in File Manager** on Linux) to find it.
+
+| System | Data folder |
+| --- | --- |
+| macOS | `~/Library/Application Support/es.nico.degenview` |
+| Windows | `%APPDATA%\es.nico.degenview` |
+| Linux | `~/.local/share/es.nico.degenview` |
+
+You can back these files up or edit them in another editor. DegenView notices changes made outside the app. See [Writing scripts](/pine/writing-scripts).
+
+## Where to go next
+
+- [Writing scripts](/pine/writing-scripts): the editor, the preview chart and the drawer tabs.
+- [Using scripts on charts](/pine/using-scripts): add a script to a chart and change its settings.
+- [Debugger and profiler](/pine/debugger-profiler): find bugs and slow lines.
+- [AI assistant](/pine/ai-assistant): ask a model to explain or change a script.
+- [What Pine supports](/pine/language): what works, and what does not.

@@ -1,37 +1,35 @@
 # Introduction
 
-DegenView is a cross-platform market dashboard for watching crypto, stocks, prediction
-markets, and CoinMarketCap market-wide indices in customizable charts. It runs on macOS,
-Windows, and Linux.
+DegenView is a free, open-source market dashboard for macOS, Windows and Linux. You search a market, add it as a live chart, and arrange as many charts as you like in tabs and windows.
+
+![DegenView with four live charts](/images/getting-started/layout-tab.png)
 
 ## What you can do
 
-- **Follow markets** — add charts from many sources and keep them live.
-- **Analyze** — draw on charts, apply indicators, and measure moves.
-- **Write your own scripts** — a built-in Pine Script v6 engine runs entirely on your
-  machine.
-- **Track portfolios** — record trades and see value, allocation, and profit at a glance.
-- **Get notified** — set price and script alerts, delivered in-app or to your desktop.
-- **Practice** — paper trade and replay past market moves without risking anything.
+- **Watch markets.** Crypto from Binance, Coinbase, CoinGecko and DEXScreener, US stocks and ETFs from Alpaca, prediction markets from Polymarket and Kalshi, and CoinMarketCap's Altcoin Season and Fear & Greed indices. See [Adding charts](/markets/adding-charts).
+- **Analyse.** 18 chart types, indicators, drawing tools and linked charts. See [Charts](/charts/charts) and [Drawing basics](/drawings/overview).
+- **Script.** Write [Pine Script v6](/pine/overview) in Pine Studio and run it on your own machine.
+- **Get alerted.** [Price alerts](/alerts/price-alerts), [script alerts](/alerts/script-alerts), desktop notifications and webhooks.
+- **Practise.** [Paper trading](/trading/paper-trading) with simulated money and [historical replay](/trading/replay).
+- **Track.** A [portfolio](/portfolio/overview) built from your transactions.
+- **Connect AI tools.** An optional [MCP server](/mcp/setup).
 
-## How the docs are organized
+## Your data and privacy
 
-The sidebar groups related features together:
+There is no DegenView account and no DegenView cloud. Your layouts, watchlists, portfolios, alerts and scripts are stored on your computer.
 
-| Section | Covers |
-| --- | --- |
-| [Markets & data](/markets/data-sources) | Where data comes from and how to add charts |
-| [Charts & analysis](/charts/charts) | Chart types, indicators, drawings, and tools |
-| [Pine Script](/pine/overview) | Writing and running scripts locally |
-| [Portfolio](/portfolio/overview) | Tracking positions, transactions, and analytics |
-| [Alerts](/alerts/price-alerts) | Price alerts, script alerts, and delivery |
-| [Trading & replay](/paper-trading) | Paper trading and historical replay |
-| [Workspace](/workspace/tabs-windows) | Tabs, windows, layouts, saved views, appearance |
-| [MCP server](/mcp) | Letting automation tools drive DegenView |
-| [Settings](/settings) | The Settings screen, end to end |
+Some things do leave your machine, and only when you use them:
 
-## One thing to remember
+- **Market data.** DegenView asks the data providers you chart for prices and candles.
+- **Pine Studio's AI assistant** sends your script to the AI provider you configure, with your own API key. See [AI assistant](/pine/ai-assistant).
+- **Snapshot sharing** uploads a chart image to a host you set up. See [Snapshots](/charts/snapshots).
+- **iCloud Sync** (macOS, only in builds that include it) syncs your data through your Apple Account. See [iCloud Sync](/settings/icloud-sync).
+- **Update checks** ask GitHub for new releases. See [Updates](/settings/updates).
 
-Everything you create — scripts, portfolios, alerts, and layout — lives on **your** device.
-There is no account and no cloud service. Scripts are evaluated locally, and alerts are
-evaluated locally too.
+::: info Not affiliated with TradingView
+Pine Script and TradingView are trademarks of TradingView, Inc. DegenView is not affiliated with or endorsed by TradingView or any data provider. Nothing in DegenView is financial advice.
+:::
+
+## Where to go next
+
+New here? Read [Installation](/getting-started/installation), then take the [quick tour](/getting-started/quick-tour).
