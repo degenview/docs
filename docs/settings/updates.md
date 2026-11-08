@@ -36,7 +36,7 @@ The button reads **View Release** and you download the new version by hand when:
 
 - the app sits in a folder you cannot write to, such as `/usr/bin`, or was installed by a package manager;
 - on macOS, you run it straight from the disk image. Drag it to Applications first;
-- you use the Flatpak, which cannot update itself. Download the new `.flatpak` file;
+- you use the Flatpak, which cannot replace itself. Run `flatpak update` if you installed from the DegenView repository (see [Installation](/getting-started/installation#with-flatpak)), or download the new `.flatpak` file if you installed one by hand;
 - it is a development build.
 
 ## By system

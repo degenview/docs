@@ -6,7 +6,7 @@ DegenView runs on macOS, Windows and Linux, and on Linux also as a Flatpak. Most
 
 | | macOS | Windows | Linux | Flatpak |
 |---|---|---|---|---|
-| Install | Disk image, zip or Homebrew | Installer or portable zip | Tarball | `.flatpak` file |
+| Install | Disk image, zip or Homebrew | Installer or portable zip | Tarball | Flatpak repository or `.flatpak` file |
 | Window and tabs | Own tab strip, system window buttons, menu bar | Own tab strip and title bar, no menu bar | Own tab strip and title bar, no menu bar | Same as Linux |
 | Shortcut key | ⌘ | Ctrl | Ctrl | Ctrl |
 | Secret storage (API keys) | Keychain | None yet | Secret Service | App-private store |
@@ -30,7 +30,7 @@ Windows and Linux builds exist for both Intel/AMD and ARM processors. The Window
 
 ## Flatpak notes
 
-The Flatpak is sandboxed: it has network, display and graphics access, but no access to your files except through the file chooser. Keys are kept in an app-private store. It cannot update itself, so download each new `.flatpak` from the release page. See [Updates](/settings/updates).
+The Flatpak is sandboxed: it has network, display and graphics access, but no access to your files except through the file chooser. Keys are kept in an app-private store. It cannot replace itself: update it with `flatpak update` if you added the DegenView repository, or download each new `.flatpak` from the release page if you installed a file. See [Installation](/getting-started/installation#with-flatpak) and [Updates](/settings/updates).
 
 ## Only on macOS
 

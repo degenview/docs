@@ -32,4 +32,4 @@ Check that **Enable MCP Server** is on and **Status** says **Running**. The addr
 
 ## DegenView cannot update itself
 
-If the button says **View Release**, the app is in a folder you cannot write to, runs from the disk image, or is a Flatpak. Move it to a folder you own, or download the new version from the release page. See [Updates](/settings/updates).
+If the button says **View Release**, the app is in a folder you cannot write to, runs from the disk image, or is a Flatpak. Move it to a folder you own, or download the new version from the release page. In a Flatpak, run `flatpak update` if you installed from the DegenView repository. See [Updates](/settings/updates).
