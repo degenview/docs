@@ -51,7 +51,3 @@ Also in **Settings ▸ Snapshots**:
 ::: info Newer builds
 The **Configure Snapshots…** row is new. Older builds reach the same page through **Settings ▸ Snapshots**.
 :::
-
-::: warning Windows
-A snapshot token cannot be saved on Windows yet. See [Platforms](/reference/platforms).
-:::
