@@ -24,20 +24,26 @@ Search for an asset ("btc"), a market ("BTCUSD", "btc/usd" and "BTC-USD" all mea
 
 Every dollar market of the asset (USD, USDT, USDC and the other dollar coins) comes first, from every exchange that lists it, so you can pick Binance's `BTCUSDT` or Coinbase's `BTC-USD` at a glance. Markets that merely include the asset in another currency, such as `BTCTRY`, follow below them, and unrelated names come last.
 
-- **All, Stocks, Crypto**: the tabs narrow the results. **All** searches crypto and stocks together. Press **Tab** to move between them.
+- **All, Stocks, Crypto, Watchlists**: the tabs narrow the results. **All** searches crypto and stocks together. **Watchlists** lists the crypto and stock markets of your [watchlists](/markets/watchlists), grouped by list; type to filter them. Press **Tab** to move between the tabs.
 - **All venues**: choose one exchange to see only its markets.
 - **A check** marks a market that is already on a chart in this tab. A **+** on the highlighted row adds the market as a new chart instead of replacing the current one.
 - With nothing typed, the list shows markets you picked recently, or a few popular ones if you have none yet.
 
 ![The picker before typing, listing popular markets](/images/markets/symbol-picker-popular.png)
 
-Stocks need your free Alpaca keys. Until they are set, the picker says so and offers **Open Settings**. See [Data sources](/markets/data-sources).
+Stocks need your free Alpaca keys. Until they are set, a card at the bottom of the list says so and offers **Open Settings**. See [Data sources](/markets/data-sources).
+
+![The Alpaca card at the bottom of the list](/images/markets/symbol-picker-alpaca.png)
 
 ## The detail panel
 
 The panel on the right (it hides in a narrow window) shows the highlighted market's last price and change, whether it is trading, and where it is listed. **Also trades as** lists the same asset's dollar markets on other exchanges. Click one to switch the chart straight to it.
 
 ![Stock results with the market state and price on the right](/images/markets/symbol-picker-stocks.png)
+
+The **Watchlists** tab shows your own lists:
+
+![The Watchlists tab with two lists](/images/markets/symbol-picker-watchlists.png)
 
 ## Keys
 
@@ -46,7 +52,7 @@ The panel on the right (it hides in a narrow window) shows the highlighted marke
 | ↑ ↓ | Move through the results |
 | Return | Replace the chart's market with the highlighted one |
 | ⇧Return | Add the highlighted market as a new chart |
-| Tab | Switch between All, Stocks and Crypto |
+| Tab | Switch between All, Stocks, Crypto and Watchlists |
 | Esc | Close |
 
 ::: info Names changed
