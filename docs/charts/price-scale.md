@@ -24,6 +24,7 @@ The price scale is the axis on the right of a chart. It has four modes, set per 
 
 - Percent and Indexed change only the axis labels and the crosshair tag. Drawings, alerts, orders and the open-high-low-close box still use real prices.
 - The reference bar moves as you pan, so percent values change as the left edge moves.
+- Percent and Indexed are the axes to read [compared markets](/charts/compare) on. Adding the first compared market to a chart on **Regular** switches it to **Percent**.
 - If any visible price is zero or below, Logarithmic is drawn as Regular until the data allows it. The button's tooltip says so.
 
 ![Axis in Percent mode on example candles](/images/charts/price-scale-percent.png)
