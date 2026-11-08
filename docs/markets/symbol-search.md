@@ -52,6 +52,7 @@ The **Watchlists** tab shows your own lists:
 | ↑ ↓ | Move through the results |
 | Return | Replace the chart's market with the highlighted one |
 | ⇧Return | Add the highlighted market as a new chart |
+| ⌥Return (Alt+Enter) | Draw the highlighted market over the chart as a [comparison](/charts/compare) and close |
 | Tab | Switch between All, Stocks, Crypto and Watchlists |
 | Esc, or a click outside the sheet | Close |
 

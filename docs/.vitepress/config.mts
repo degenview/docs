@@ -51,6 +51,7 @@ export default defineConfig({
           { text: 'Chart types', link: '/charts/chart-types' },
           { text: 'Indicators', link: '/charts/indicators' },
           { text: 'Price scale', link: '/charts/price-scale' },
+          { text: 'Comparing markets', link: '/charts/compare' },
           { text: 'Chart settings & templates', link: '/charts/settings-templates' },
           { text: 'Linked charts', link: '/charts/linked-charts' },
           { text: 'Snapshots', link: '/charts/snapshots' },

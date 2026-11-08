@@ -4,12 +4,13 @@ Chart settings control how one chart looks. A chart template saves that look so 
 
 ## Chart settings
 
-Click a chart's market name, logo or price, or choose **Settings…** from the right-click menu. Changes apply as you make them. The sheet has four tabs:
+Click a chart's market name, logo or price, or choose **Settings…** from the right-click menu. Changes apply as you make them. The sheet has five tabs:
 
 | Tab | What is there |
 | --- | --- |
 | **Indicators** | The five built-in indicators. See [Indicators](/charts/indicators). |
 | **Scripts** | Pine scripts on this chart. See [Using scripts on charts](/pine/using-scripts). |
+| **Compare** | Other markets drawn on this chart. See [Comparing markets](/charts/compare). |
 | **Appearance** | Chart type and its settings, price axis format, and colours. |
 | **Canvas** | The page the chart is drawn on. |
 
