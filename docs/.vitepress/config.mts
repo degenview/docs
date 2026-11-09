@@ -98,6 +98,7 @@ export default defineConfig({
         text: 'Trading & replay',
         items: [
           { text: 'Paper trading', link: '/trading/paper-trading' },
+          { text: 'Live trading', link: '/trading/live-trading' },
           { text: 'Historical replay', link: '/trading/replay' },
         ],
       },
