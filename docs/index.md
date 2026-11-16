@@ -6,8 +6,9 @@ hero:
   text: Your markets, one dashboard
   tagline: Charts for crypto, stocks, prediction markets and market-wide indices, with drawing tools, a local Pine Script engine, alerts, paper trading and a portfolio tracker. Free and open source, for macOS, Windows and Linux.
   image:
-    src: /logo.png
-    alt: DegenView
+    light: /images/hero-light.webp
+    dark: /images/hero-dark.webp
+    alt: A DegenView window with a multi-indicator BTCUSDT chart
   actions:
     - theme: brand
       text: Get started

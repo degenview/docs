@@ -1,7 +1,12 @@
 /*
- * Matches the marketing site (degenview.app, src/styles/global.css): true-black canvas in dark,
- * neutral greys, Inter + JetBrains Mono, royal blue #2962ff fading into purple on hero words,
- * inverse pill buttons, 0.875rem bordered cards. Keep these tokens in step with that file.
+ * Matches the marketing site (degenview.app, src/styles/global.css), the "terminal" look: true-black canvas in dark,
+ * hairline borders, mostly opaque dark panels over the animated candlestick city, condensed Big Shoulders display
+ * type for headlines, mono micro-labels, Inter for sentences, royal blue #2962ff fading into purple on hero words,
+ * inverse pill buttons. Keep these tokens in step with that file.
+ *
+ * The candle city is a fixed canvas behind everything (see index.ts and candle-city.ts). Surfaces that sit over it use
+ * the translucent --dv-panel / --dv-card tints below and never `backdrop-filter`: the canvas repaints every frame, and
+ * a blur over it would be re-rendered every frame.
  */
 :root {
   --dv-bg: #ffffff;
@@ -20,17 +25,30 @@
   --dv-glow-a: rgb(41 98 255 / 0.16);
   --dv-glow-b: rgb(213 0 249 / 0.1);
   --dv-grid: rgb(0 0 0 / 0.05);
+  /* Terminal surfaces: panel (big), card, tile (card inside a panel), hairline border and its hover glow, top highlight. */
+  --dv-panel: rgb(255 255 255 / 0.9);
+  --dv-card: rgb(255 255 255 / 0.82);
+  --dv-tile: rgb(15 15 15 / 0.03);
+  --dv-hair: rgb(15 15 15 / 0.11);
+  --dv-hair-hi: rgb(41 98 255 / 0.5);
+  --dv-hl: rgb(255 255 255 / 0.8);
 
-  --vp-font-family-base: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  /* Read by candle-city.ts. */
+  --up: #089981;
+  --down: #f23645;
+  --city-alpha: 0.1; /* marketing site: 0.3 (light) / 0.44 (dark); docs keep it barely visible */
+
+  --dv-font-display: 'Big Shoulders Display Variable', 'Oswald', 'Arial Narrow', Impact, ui-sans-serif, sans-serif;
+  --vp-font-family-base: 'Inter Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
   --vp-font-family-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, monospace;
 
   --vp-c-bg: var(--dv-bg);
   --vp-c-bg-alt: var(--dv-surface);
   --vp-c-bg-elv: var(--dv-surface);
   --vp-c-bg-soft: var(--dv-surface);
-  --vp-c-divider: var(--dv-border);
-  --vp-c-gutter: var(--dv-border);
-  --vp-c-border: var(--dv-border);
+  --vp-c-divider: var(--dv-hair);
+  --vp-c-gutter: var(--dv-hair);
+  --vp-c-border: var(--dv-hair);
   --vp-c-text-1: var(--dv-fg);
   --vp-c-text-2: var(--dv-muted);
   --vp-c-text-3: var(--dv-muted);
@@ -51,134 +69,176 @@
   --vp-button-brand-active-border: var(--dv-inverse-hover);
   --vp-button-alt-bg: transparent;
   --vp-button-alt-text: var(--dv-fg);
-  --vp-button-alt-border: var(--dv-border);
-  --vp-button-alt-hover-bg: var(--dv-surface);
+  --vp-button-alt-border: var(--dv-hair);
+  --vp-button-alt-hover-bg: var(--dv-tile);
   --vp-button-alt-hover-text: var(--dv-fg);
-  --vp-button-alt-hover-border: var(--dv-muted);
+  --vp-button-alt-hover-border: var(--dv-hair-hi);
 
   --vp-code-block-bg: var(--dv-surface);
   --vp-code-line-highlight-color: rgb(41 98 255 / 0.1);
   --vp-code-font-size: 0.875em;
 
-  --vp-nav-bg-color: color-mix(in srgb, var(--dv-bg) 80%, transparent);
+  --vp-nav-bg-color: color-mix(in srgb, var(--dv-bg) 90%, transparent);
   --vp-layout-top-height: 0px;
-  --vp-sidebar-bg-color: var(--dv-bg);
+  --vp-sidebar-bg-color: color-mix(in srgb, var(--dv-bg) 78%, transparent);
 }
 
 .dark {
   --dv-bg: #000000;
-  --dv-surface: #131313;
-  --dv-chrome: #222222;
-  --dv-border: #303030;
+  --dv-surface: #0c0c0e;
+  --dv-chrome: #1b1b1e;
+  --dv-border: #2a2a2e;
   --dv-fg: #ffffff;
-  --dv-muted: #b8b8b8;
+  --dv-muted: #b3b3b8;
   --dv-accent-hover: #3179f5;
-  --dv-accent-text: #5b9cf6;
+  --dv-accent-text: #6aa5ff;
   --dv-inverse: #ffffff;
   --dv-inverse-ink: #000000;
   --dv-inverse-hover: #dbdbdb;
   --dv-purple: #d500f9;
-  --dv-glow-a: rgb(41 98 255 / 0.34);
-  --dv-glow-b: rgb(213 0 249 / 0.2);
-  --dv-grid: rgb(255 255 255 / 0.045);
-  --vp-c-brand-soft: rgb(91 156 246 / 0.16);
+  --dv-glow-a: rgb(41 98 255 / 0.3);
+  --dv-glow-b: rgb(213 0 249 / 0.18);
+  --dv-grid: rgb(255 255 255 / 0.04);
+  --dv-panel: rgb(6 7 11 / 0.86);
+  --dv-card: rgb(8 9 14 / 0.78);
+  --dv-tile: rgb(255 255 255 / 0.03);
+  --dv-hair: rgb(255 255 255 / 0.09);
+  --dv-hair-hi: rgb(106 165 255 / 0.55);
+  --dv-hl: rgb(255 255 255 / 0.05);
+  --up: #22ab94;
+  --down: #f7525f;
+  --city-alpha: 0.12;
+  --vp-c-brand-soft: rgb(106 165 255 / 0.16);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { animation: none !important; transition: none !important; }
 }
 body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: color-mix(in srgb, var(--dv-accent) 45%, transparent); }
 :focus-visible { outline: 2px solid var(--dv-accent-text); outline-offset: 2px; border-radius: 8px; }
 
-/* ---- Navbar: translucent bar with a faint hairline, like the marketing header ---- */
-.VPNav .VPNavBar:not(.home.top) { border-bottom: 1px solid color-mix(in srgb, var(--dv-border) 50%, transparent); }
-.VPNavBar { background-color: var(--vp-nav-bg-color); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+/* The candle city: fixed behind the whole page, camera follows the scroll position. No CSS opacity on purpose: the
+   script applies --city-alpha inside its blend. */
+.candle-city { position: fixed; inset: 0; z-index: -10; width: 100%; height: 100vh; height: 100lvh; pointer-events: none; }
+/* Let it show: the layout wrappers must not paint the page colour over it. */
+.Layout, .VPContent, .VPDoc, .VPHome, .VPPage { background: transparent; }
+
+/* ---- Navbar: solid-ish bar with a hairline, the wordmark in the display face, like the marketing header ---- */
+.VPNav { background: transparent; }
+.VPNavBar { background-color: var(--vp-nav-bg-color); border-bottom: 1px solid var(--dv-hair); }
+.VPNavBar:not(.has-sidebar):not(.home.top) { background-color: var(--vp-nav-bg-color); }
+.VPNavBar.home.top { background-color: transparent; border-bottom-color: transparent; }
 .VPNavBar .divider-line { background-color: transparent; }
-.VPNavBar.has-sidebar .content { backdrop-filter: none; background: transparent; }
-.VPNavBarTitle .title { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.025em; }
-.VPNavBarTitle .logo { height: 32px; }
+.VPNavBar.has-sidebar .content { background: transparent; }
+.VPNavBarTitle .title { font-family: var(--dv-font-display); font-size: 1.7rem; font-weight: 800; line-height: 1; letter-spacing: 0.03em; }
 .VPNavBarMenuLink, .VPNavBarMenuGroup .button {
   margin-inline: 2px; padding: 0 0.875rem; height: 36px; align-self: center; line-height: 36px;
-  border-radius: 8px; font-weight: 500; color: color-mix(in srgb, var(--dv-fg) 80%, transparent);
+  border-radius: 8px; font-size: 0.875rem; font-weight: 500; color: color-mix(in srgb, var(--dv-fg) 75%, transparent);
   transition: background-color 0.15s, color 0.15s;
 }
-.VPNavBarMenuLink:hover, .VPNavBarMenuGroup:hover .button { background: var(--dv-chrome); color: var(--dv-fg); }
-.VPNavBarMenuLink.active { color: var(--dv-fg); }
+.VPNavBarMenuLink:hover, .VPNavBarMenuGroup:hover .button { background: color-mix(in srgb, var(--dv-fg) 6%, transparent); color: var(--dv-fg); }
+.VPNavBarMenuLink.active { background: color-mix(in srgb, var(--dv-fg) 8%, transparent); color: var(--dv-fg) !important; }
+/* "Download" is the call to action, like the inverse button in the marketing header. */
+.VPNavBarMenuLink[href$='/download/'] { background: var(--dv-inverse); color: var(--dv-inverse-ink); font-weight: 600; margin-left: 0.5rem; padding-inline: 1rem; }
+.VPNavBarMenuLink[href$='/download/']:hover { background: var(--dv-inverse-hover); color: var(--dv-inverse-ink); }
 .VPNavBarSearch .DocSearch-Button, .VPNavBarSearch .VPNavBarSearchButton { border-radius: 8px; }
-.VPNavBarSearchButton { background: var(--dv-surface) !important; border: 1px solid var(--dv-border); }
+.VPNavBarSearchButton { background: var(--dv-tile) !important; border: 1px solid var(--dv-hair); }
+.VPNavBarSocialLinks .VPSocialLink { color: color-mix(in srgb, var(--dv-fg) 75%, transparent); }
+.VPNavBarSocialLinks .VPSocialLink:hover { color: var(--dv-fg); }
+.VPLocalNav { background-color: var(--vp-nav-bg-color); border-bottom: 1px solid var(--dv-hair); }
+.VPNavScreen { background-color: var(--dv-bg); }
 
-/* ---- Sidebar ---- */
-.VPSidebar { background: var(--dv-bg); border-right: 1px solid color-mix(in srgb, var(--dv-border) 50%, transparent); }
-.VPSidebarItem.level-0 > .item > .text { font-weight: 600; letter-spacing: -0.01em; }
+/* ---- Sidebar: a translucent column; group titles are mono micro-labels ---- */
+.VPSidebar { background: var(--vp-sidebar-bg-color); border-right: 1px solid var(--dv-hair); }
+.VPSidebarItem.level-0 > .item > .text, .VPSidebarItem.level-0 > .item > .link > .text {
+  font-family: var(--vp-font-family-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dv-accent-text);
+}
+.VPSidebarItem.level-0 { padding-bottom: 12px; }
 .VPSidebarItem .link { border-radius: 8px; transition: background-color 0.12s; }
-.VPSidebarItem .link:hover { background: var(--dv-chrome); }
-.VPSidebarItem.is-active > .item .link { background: var(--dv-chrome); }
+.VPSidebarItem .link:hover { background: color-mix(in srgb, var(--dv-fg) 6%, transparent); }
+.VPSidebarItem.is-active > .item .link { background: color-mix(in srgb, var(--dv-fg) 8%, transparent); }
 .VPSidebarItem.is-active > .item .link > .text { color: var(--dv-fg); font-weight: 600; }
 .VPSidebarItem.level-0 .items { padding-left: 0; }
 
-/* ---- Doc content ---- */
-.vp-doc h1 { font-weight: 600; letter-spacing: -0.035em; line-height: 1.04; text-wrap: balance; font-size: 2.5rem; }
+/* ---- Doc content: one big glass panel over the candles ---- */
+@media (min-width: 960px) {
+  .VPDoc .content-container {
+    background: var(--dv-panel); border: 1px solid var(--dv-hair); border-radius: 1rem;
+    box-shadow: inset 0 1px 0 var(--dv-hl), 0 30px 80px -50px rgb(0 0 0 / 0.7);
+    padding: 2rem 2.5rem 1.5rem;
+  }
+  .VPDoc .content { padding-top: 0; }
+}
+@media (max-width: 959px) {
+  .VPDoc .container { padding-inline: 0; }
+  .VPDoc .content { padding: 0 16px; }
+  .VPDoc .content-container { background: var(--dv-panel); border-block: 1px solid var(--dv-hair); padding: 1.5rem 1rem 1rem; margin-inline: -16px; }
+}
+.vp-doc h1 {
+  font-family: var(--dv-font-display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2.75rem, 2rem + 3vw, 4rem); line-height: 0.95; letter-spacing: 0; text-wrap: balance;
+}
 .vp-doc h2 {
-  font-weight: 600; letter-spacing: -0.03em; line-height: 1.15;
-  margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--dv-border);
+  font-family: var(--dv-font-display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(1.9rem, 1.5rem + 1.2vw, 2.4rem); line-height: 1; letter-spacing: 0.005em;
+  margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--dv-hair);
 }
 .vp-doc h3 { font-weight: 600; letter-spacing: -0.02em; }
 .vp-doc a { color: var(--dv-accent-text); font-weight: 500; text-decoration: none; text-underline-offset: 3px; }
 .vp-doc a:hover { text-decoration: underline; }
+.vp-doc .header-anchor { font-weight: 400; }
 .vp-doc strong { font-weight: 600; }
 .vp-doc :not(pre) > code {
-  background: var(--dv-chrome); color: var(--dv-fg); border-radius: 6px; padding: 0.15em 0.4em;
+  background: var(--dv-tile); border: 1px solid var(--dv-hair); color: var(--dv-fg); border-radius: 6px; padding: 0.1em 0.4em;
 }
 .vp-doc a > code { color: inherit; }
-.vp-doc div[class*='language-'] { border: 1px solid var(--dv-border); border-radius: 0.875rem; background: var(--dv-surface); }
+.vp-doc div[class*='language-'] { border: 1px solid var(--dv-hair); border-radius: 0.75rem; background: var(--dv-surface); }
 .vp-doc [class*='language-'] > button.copy { border-radius: 8px; }
-.vp-doc table { display: table; width: 100%; border: 1px solid var(--dv-border); border-radius: 0.875rem; border-collapse: separate; border-spacing: 0; overflow: hidden; }
-.vp-doc th { background: var(--dv-surface); font-weight: 600; }
+.vp-doc table { display: table; width: 100%; border: 1px solid var(--dv-hair); border-radius: 0.75rem; border-collapse: separate; border-spacing: 0; overflow: hidden; }
+.vp-doc th { background: var(--dv-tile); font-family: var(--vp-font-family-mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 .vp-doc tr { background: transparent; border: none; }
-.vp-doc tr:nth-child(2n) { background: var(--dv-surface); }
-.vp-doc th, .vp-doc td { border: none; border-bottom: 1px solid var(--dv-border); }
+.vp-doc tr:nth-child(2n) { background: var(--dv-tile); }
+.vp-doc th, .vp-doc td { border: none; border-bottom: 1px solid var(--dv-hair); }
 .vp-doc tr:last-child td { border-bottom: none; }
-.vp-doc img { border-radius: 0.875rem; }
 .vp-doc kbd {
   font-family: var(--vp-font-family-mono); font-size: 0.8em; padding: 0.1em 0.45em;
-  background: var(--dv-chrome); border: 1px solid var(--dv-border); border-bottom-width: 2px; border-radius: 6px;
+  background: var(--dv-tile); border: 1px solid var(--dv-hair); border-bottom-width: 2px; border-radius: 6px;
 }
-.vp-doc blockquote { border-left: 2px solid var(--dv-border); color: var(--dv-muted); }
+.vp-doc blockquote { border-left: 2px solid var(--dv-hair-hi); color: var(--dv-muted); }
+.vp-doc hr { border-top-color: var(--dv-hair); }
 
-/* Callouts: the same card shape as the site; tint only the border-left-less variants. */
-.vp-doc .custom-block { border: 1px solid var(--dv-border); border-radius: 0.875rem; background: var(--dv-surface); padding: 1rem 1.25rem; }
-.vp-doc .custom-block.info { --vp-custom-block-info-bg: var(--dv-surface); }
-.vp-doc .custom-block.tip { border-color: color-mix(in srgb, var(--dv-accent) 40%, var(--dv-border)); background: rgb(41 98 255 / 0.07); }
-.vp-doc .custom-block.warning { border-color: rgb(245 158 11 / 0.45); background: rgb(245 158 11 / 0.07); }
+/* Callouts: the card shape of the site with a tinted fill. */
+.vp-doc .custom-block { border: 1px solid var(--dv-hair); border-radius: 0.75rem; background: var(--dv-tile); padding: 1rem 1.25rem; }
+.vp-doc .custom-block.info { --vp-custom-block-info-bg: var(--dv-tile); }
+.vp-doc .custom-block.tip { border-color: color-mix(in srgb, var(--dv-accent) 40%, var(--dv-hair)); background: rgb(41 98 255 / 0.07); }
+.vp-doc .custom-block.warning { border-color: rgb(245 165 36 / 0.45); background: rgb(245 165 36 / 0.07); }
 .vp-doc .custom-block.danger { border-color: rgb(242 54 69 / 0.45); background: rgb(242 54 69 / 0.07); }
-.vp-doc .custom-block-title { font-weight: 600; }
+.vp-doc .custom-block-title { font-family: var(--vp-font-family-mono); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Screenshots: centred, hairline-bordered, never taller than a screen. */
+.vp-doc img { display: block; max-width: 100%; max-height: 720px; width: auto; height: auto; margin: 1.25rem auto; border: 1px solid var(--dv-hair); border-radius: 0.75rem; }
+.vp-doc p > img:only-child { margin-inline: auto; }
+.vp-doc table img, .vp-doc li > img { margin-inline: 0; }
 
 /* Right-hand outline */
+.VPDocAsideOutline .outline-title { font-family: var(--vp-font-family-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dv-muted); }
+.VPDocAsideOutline .content { border-left-color: var(--dv-hair); }
 .VPDocAsideOutline .outline-link { transition: color 0.12s; }
 .VPDocAsideOutline .outline-link.active { color: var(--dv-fg); font-weight: 600; }
 .VPDocAsideOutline .outline-marker { background: var(--dv-accent); width: 2px; }
 
-/* Prev / next: bordered cards */
+/* Prev / next: hairline cards */
+.VPDocFooter { margin-top: 3rem; }
 .VPDocFooter .prev-next { border-top: none; }
-.VPDocFooterLinks .pager-link, .VPDocFooter .pager-link { border: 1px solid var(--dv-border); border-radius: 0.875rem; background: var(--dv-surface); }
-.VPDocFooter .pager-link:hover { border-color: var(--dv-muted); }
-.VPDocFooter .pager-link .desc { color: var(--dv-muted); }
+.VPDocFooter .pager-link { border: 1px solid var(--dv-hair); border-radius: 0.75rem; background: var(--dv-card); transition: border-color 0.2s; }
+.VPDocFooter .pager-link:hover { border-color: var(--dv-hair-hi); }
+.VPDocFooter .pager-link .desc { font-family: var(--vp-font-family-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dv-muted); }
 .VPDocFooter .pager-link .title { color: var(--dv-fg); font-weight: 600; }
 
-/* ---- Home: halo + grid behind the hero, gradient name, display type ---- */
-.VPHome { position: relative; overflow: hidden; }
-.VPHome::before {
-  content: ''; position: absolute; z-index: 0; pointer-events: none;
-  left: 50%; top: -12rem; width: 60rem; height: 34rem; transform: translateX(-50%);
-  background: radial-gradient(closest-side, var(--dv-glow-a), transparent); filter: blur(48px);
-}
-.VPHome::after {
-  content: ''; position: absolute; z-index: 0; pointer-events: none;
-  right: -12rem; top: 18rem; width: 40rem; height: 30rem;
-  background: radial-gradient(closest-side, var(--dv-glow-b), transparent); filter: blur(48px);
-}
+/* ---- Home: display headline over the candles, screenshot on the right ---- */
 .VPHero { position: relative; z-index: 1; }
 .VPHero::before {
   content: ''; position: absolute; inset: 0 0 auto 0; height: 36rem; z-index: -1; pointer-events: none;
@@ -188,26 +248,38 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
   mask-image: radial-gradient(ellipse at top, black, transparent 65%);
 }
 .VPHome .container, .VPHome .VPFeatures { position: relative; z-index: 1; }
-.VPHero .name, .VPHero .text { letter-spacing: -0.035em; line-height: 1.04; font-weight: 600; text-wrap: balance; }
+.VPHero .name, .VPHero .text {
+  font-family: var(--dv-font-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0; line-height: 0.92; text-wrap: balance;
+}
 .VPHero .name {
+  font-size: clamp(3.5rem, 2rem + 6vw, 6.5rem);
   background: linear-gradient(90deg, #2962ff 30%, var(--dv-purple));
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
-  --vp-home-hero-name-color: transparent; padding-bottom: 0.08em; width: fit-content;
+  --vp-home-hero-name-color: transparent; padding-bottom: 0.04em; width: fit-content;
 }
-.VPHero .text { color: var(--dv-fg); }
-.VPHero .tagline { color: var(--dv-muted); font-weight: 400; }
+.VPHero .text { font-size: clamp(2.5rem, 1.5rem + 4vw, 4.75rem); color: var(--dv-fg); }
+.VPHero .tagline { color: var(--dv-muted); font-weight: 400; font-size: 1.125rem; line-height: 1.6; max-width: 36rem; }
+/* A soft dark radial behind the headline block keeps it legible over the candles, without a visible box. */
+.VPHero .main { position: relative; isolation: isolate; }
+.VPHero .main::before {
+  content: ''; position: absolute; inset: -2rem -3rem; z-index: -1; pointer-events: none;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--dv-bg) 80%, transparent), transparent);
+}
 .VPHero .image-bg { display: none; }
-.VPHero .image-src { max-width: 220px; max-height: 220px; border-radius: 22%; box-shadow: 0 0 0 1px rgb(41 98 255 / 0.18), 0 30px 90px -30px rgb(41 98 255 / 0.55), 0 20px 60px -40px rgb(213 0 249 / 0.4); }
-.VPButton { border-radius: 0.75rem; font-weight: 600; transition: transform 0.15s, background-color 0.15s, border-color 0.15s; }
+.VPHero .image-container { transform: none; }
+.VPHero .image-src { position: static; transform: none; max-width: min(100%, 640px); max-height: none; width: 100%; border: none; margin: 0; filter: drop-shadow(0 30px 60px rgb(41 98 255 / 0.28)) drop-shadow(0 20px 40px rgb(213 0 249 / 0.14)); }
+.VPButton { border-radius: 0.75rem; font-weight: 600; transition: transform 0.15s, background-color 0.15s, border-color 0.15s, filter 0.15s; }
 .VPButton:active { transform: translateY(1px); }
-.VPButton.medium { padding: 0 1.25rem; height: 46px; line-height: 44px; }
-.VPFeature { background: var(--dv-surface); border: 1px solid var(--dv-border); border-radius: 0.875rem; transition: border-color 0.15s; }
-.VPFeature:hover { border-color: var(--dv-muted); }
-.VPFeature .title { font-weight: 600; letter-spacing: -0.01em; }
+.VPButton.medium { display: inline-flex; align-items: center; justify-content: center; padding: 0 1.25rem; height: 46px; line-height: 1; }
+.VPButton.brand { background: linear-gradient(90deg, #2962ff 25%, var(--dv-purple)); border-color: transparent; color: #fff !important; box-shadow: 0 10px 30px -10px rgb(41 98 255 / 0.7); }
+.VPButton.brand:hover { filter: brightness(1.12); background: linear-gradient(90deg, #2962ff 25%, var(--dv-purple)); color: #fff !important; }
+.VPFeature { background: var(--dv-card); border: 1px solid var(--dv-hair); border-radius: 0.75rem; transition: border-color 0.2s; }
+.VPFeature:hover { border-color: var(--dv-hair-hi); }
+.VPFeature .title { font-family: var(--dv-font-display); font-size: 1.6rem; font-weight: 800; line-height: 1; letter-spacing: 0.005em; text-transform: uppercase; }
 .VPFeature .details { color: var(--dv-muted); }
 
-/* ---- Footer: marketing footer's quiet small print ---- */
-.VPFooter { border-top: 1px solid color-mix(in srgb, var(--dv-border) 50%, transparent); background: var(--dv-bg); padding: 3.5rem 24px; }
+/* ---- Footer: a panel with the marketing footer's quiet small print ---- */
+.VPFooter { border-top: 1px solid var(--dv-hair); background: var(--dv-panel); padding: 3.5rem 24px; }
 .VPFooter .message, .VPFooter .copyright { color: var(--dv-muted); font-size: 0.875rem; }
 .VPFooter .message strong { color: var(--dv-fg); }
 .VPFooter a { color: var(--dv-muted); text-decoration: none; transition: color 0.12s; }
@@ -215,14 +287,11 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 .VPFooter .dv-legal { display: block; max-width: 44rem; margin: 0.75rem auto 0; font-size: 0.75rem; }
 
 /* Local search dialog */
-.VPLocalSearchBox .shell { border: 1px solid var(--dv-border); border-radius: 0.875rem; background: var(--dv-surface); }
+.VPLocalSearchBox .shell { border: 1px solid var(--dv-hair); border-radius: 0.875rem; background: var(--dv-surface); }
 
 @media (max-width: 959px) {
-  .VPHero .image-src { max-width: 132px; max-height: 132px; }
+  /* Text first, screenshot below it, like the marketing hero (VitePress puts the image on top by default). */
+  .VPHero .image { order: 3; margin: 2.5rem 0 0; }
+  .VPHero .image-src { max-width: 100%; }
   .VPHero .name { margin-inline: auto; }
 }
-
-/* Screenshots: centred, bordered, never taller than a screen. */
-.vp-doc img { display: block; max-width: 100%; max-height: 720px; width: auto; height: auto; margin: 1.25rem auto; border: 1px solid var(--dv-border); border-radius: 0.875rem; }
-.vp-doc p > img:only-child { margin-inline: auto; }
-.vp-doc table img, .vp-doc li > img { margin-inline: 0; }
