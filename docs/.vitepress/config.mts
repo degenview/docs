@@ -16,14 +16,14 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#000000' }],
   ],
   themeConfig: {
-    logo: '/logo.png',
     siteTitle: 'DegenView',
-    // Same links as the marketing header, plus the way in to these docs.
+    // Same links as the marketing header (the GitHub icon is the social link below).
     nav: [
+      { text: 'Features', link: 'https://degenview.app/#features', noIcon: true },
+      { text: 'Pine Studio', link: 'https://degenview.app/pine-studio/', noIcon: true },
+      { text: 'TradingView alternative', link: 'https://degenview.app/tradingview-alternative/', noIcon: true },
       { text: 'Docs', link: '/getting-started/introduction', activeMatch: '^/(?!$)' },
-      { text: 'Features', link: 'https://degenview.app/#features' },
-      { text: 'Download', link: 'https://degenview.app/download/' },
-      { text: 'FAQ', link: 'https://degenview.app/faq/' },
+      { text: 'Download', link: 'https://degenview.app/download/', noIcon: true },
     ],
     socialLinks: [{ icon: 'github', link: 'https://github.com/degenview/degenview' }],
     sidebar: [
