@@ -1,6 +1,6 @@
 # Data sources
 
-DegenView gets candles and quotes straight from public market-data providers. Most need no setup. Only stock charts need free Alpaca keys, and CoinMarketCap keys are optional.
+DegenView gets candles and quotes straight from public market-data providers. Most need no setup. Only stock charts need free Alpaca keys, and CoinMarketCap keys are optional. If you reach the internet through a proxy, see [Network and proxy](/settings/network).
 
 ## Providers
 
@@ -8,6 +8,11 @@ DegenView gets candles and quotes straight from public market-data providers. Mo
 | --- | --- | --- |
 | **Binance** | Crypto | Live candle updates. Older history loads as you scroll back. |
 | **Coinbase** | Crypto | Refreshes every few seconds. Older history loads as you scroll back. |
+| **OKX** | Crypto | Spot markets, no key. Live candle updates. Older history loads as you scroll back. |
+| **Kraken** | Crypto | Spot markets, no key. Live candle updates. Keeps only its newest 720 candles per timeframe (12 hours of 1m, 30 days of 1h, 2 years of 1D) and allows one request every few seconds, so there is little history to scroll back to and it refreshes slowly between live updates. |
+| **Bybit** | Crypto | Spot markets, no key. Live candle updates. Older history loads as you scroll back. Not served in some countries. |
+| **Gate.io** | Crypto | Spot markets, no key. Live candle updates. History reaches back about 8,900 candles of the timeframe. Not served in some countries. |
+| **MEXC** | Crypto | Spot markets, no key. Live candle updates. Older history loads as you scroll back. Its tokenised stocks and commodities are left out of search. |
 | **DEXScreener** | Crypto | Search comes from DEXScreener and candles from GeckoTerminal, which serves about 180 days on its free tier. Longer timeframes are shallow. |
 | **CoinGecko** | Crypto | No volume and no older history. Rate-limited, so it refreshes more slowly. |
 | **Alpaca (IEX)** | Stocks | US stocks and ETFs on Alpaca's free IEX feed. Needs keys. IEX is a single exchange, so volume can be lower than consolidated figures. |
@@ -15,11 +20,11 @@ DegenView gets candles and quotes straight from public market-data providers. Mo
 | **Kalshi** | Predictions | Drawn as a probability line. |
 | **CoinMarketCap** | CoinMarketCap | Altcoin Season Index, Altcoin Season History, Fear & Greed Index and Fear & Greed History. |
 
-Volume exists for Binance, Coinbase, DEXScreener and Alpaca only. Prediction markets and CoinMarketCap charts are drawn as lines: they have no chart-type choice and no volume bars, and the indicator picker offers no Pine scripts on them. CoinMarketCap charts also have no indicators or scripts, so their chart settings offer only **Appearance** and **Canvas**.
+Volume exists for the exchanges (Binance, Coinbase, OKX, Kraken, Bybit, Gate.io and MEXC), DEXScreener and Alpaca. CoinGecko has none. Prediction markets and CoinMarketCap charts are drawn as lines: they have no chart-type choice and no volume bars, and the indicator picker offers no Pine scripts on them. CoinMarketCap charts also have no indicators or scripts, so their chart settings offer only **Appearance** and **Canvas**.
 
 ## How fresh is the data
 
-Only Binance streams live candles. Every other provider is polled on a timer, more slowly for rate-limited ones. If a refresh fails, the chart keeps the last data and shows a pill such as **Couldn't refresh · showing the last result**. Background tabs and hidden windows pause their feeds.
+Binance, OKX, Kraken, Bybit, Gate.io and MEXC stream live candles. Coinbase, OKX, Kraken, Bybit and Gate.io also stream prices to [watchlists](/markets/watchlists). Every other provider is polled on a timer, more slowly for rate-limited ones. If a refresh fails, the chart keeps the last data and shows a pill such as **Couldn't refresh · showing the last result**. Background tabs and hidden windows pause their feeds.
 
 ## Set up Alpaca for stocks
 

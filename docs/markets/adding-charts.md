@@ -11,7 +11,7 @@ A chart follows one market: a crypto pair, a US stock, a prediction market or a 
 
 ![Add Chart sheet before typing, showing crypto suggestions](/images/markets/add-chart-start.png)
 
-Crypto search asks Binance, Coinbase, DEXScreener and CoinGecko together and groups the results by provider. The same symbol from two providers stays two separate charts, so you can keep a Binance chart and a Coinbase chart of the same coin side by side.
+Crypto search asks Binance, Coinbase, OKX, Kraken, Bybit, Gate.io, MEXC, DEXScreener and CoinGecko together and groups the results by provider. The same symbol from two providers stays two separate charts, so you can keep a Binance chart and a Kraken chart of the same coin side by side.
 
 ![Add Chart sheet with search results grouped by provider](/images/markets/add-chart.png)
 

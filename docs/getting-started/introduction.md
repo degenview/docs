@@ -6,7 +6,7 @@ DegenView is a free, open-source market dashboard for macOS, Windows and Linux. 
 
 ## What you can do
 
-- **Watch markets.** Crypto from Binance, Coinbase, CoinGecko and DEXScreener, US stocks and ETFs from Alpaca, prediction markets from Polymarket and Kalshi, and CoinMarketCap's Altcoin Season and Fear & Greed indices. See [Adding charts](/markets/adding-charts).
+- **Watch markets.** Crypto from Binance, Coinbase, OKX, Kraken, Bybit, Gate.io, MEXC, CoinGecko and DEXScreener, US stocks and ETFs from Alpaca, prediction markets from Polymarket and Kalshi, and CoinMarketCap's Altcoin Season and Fear & Greed indices. See [Adding charts](/markets/adding-charts).
 - **Analyse.** 18 chart types, indicators, drawing tools and linked charts. See [Charts](/charts/charts) and [Drawing basics](/drawings/overview).
 - **Script.** Write [Pine Script v6](/pine/overview) in Pine Studio and run it on your own machine.
 - **Get alerted.** [Price alerts](/alerts/price-alerts), [script alerts](/alerts/script-alerts), desktop notifications and webhooks.

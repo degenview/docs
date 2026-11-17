@@ -38,7 +38,10 @@ Chart type, **Indicators** and **Chart settings** act on the focused chart, the 
 | Do this | Result |
 | --- | --- |
 | Drag the plot | Pans. Dragging up or down also moves the price range and turns autoscale off. |
-| Mouse wheel | Zooms. |
+| Mouse wheel | Zooms the bars. The newest bar stays where it is, so you zoom in on the latest candles. |
+| ⌘ + wheel (Ctrl + wheel on Windows and Linux) | Zooms the bars around the pointer. The candle under the pointer stays under it. |
+| Pinch on a trackpad | Same as ⌘ + wheel: zooms around the pointer. Spread your fingers to show fewer bars. |
+| Wheel, ⌘ + wheel or pinch over the price axis | Stretches the price range, like dragging the axis. The time is left alone. |
 | Swipe sideways on a trackpad | Scrolls through time. |
 | Drag the price axis | Stretches the price range. |
 | Drag the time axis | Stretches the bars. The newest bar stays put. |
@@ -46,15 +49,19 @@ Chart type, **Indicators** and **Chart settings** act on the focused chart, the 
 | Double-click the time axis | Jumps to the newest bars at default spacing. |
 | Esc during a drag | Puts the view back where the drag started. |
 
-Trackpad pinch does not zoom, and there are no keyboard shortcuts for moving around.
+A chart shows at least 20 bars, so zooming in stops there. Zooming around the pointer also moves the right edge of the chart. In [linked charts](/charts/linked-charts) that syncs position, the other charts follow it. There are no keyboard shortcuts for moving around.
+
+::: tip Zoom on one gesture
+Hold ⌘ (Ctrl on Windows and Linux) and scroll to zoom on the candle you are looking at. Without the key, the wheel always zooms toward the newest bars.
+:::
 
 ## Navigation buttons
 
-Five small buttons sit at the bottom left of the plot: **Zoom in**, **Zoom out**, **Scroll to the left**, **Scroll to the right** and **Reset chart view**. Show or hide them with the **Navigation** row in **Chart settings ▸ Canvas ▸ Buttons** (**Always visible**, **Visible on mouse over** or **Never visible**). They show on mouse over by default. Hiding them does not disable the wheel or trackpad.
+Five small buttons sit at the bottom left of the plot: **Zoom in**, **Zoom out**, **Scroll to the left**, **Scroll to the right** and **Reset chart view**. Like the time axis, they zoom around the newest bar. The scroll buttons stop at the newest bar; only dragging goes on into empty space. Show or hide them with the **Navigation** row in **Chart settings ▸ Canvas ▸ Buttons** (**Always visible**, **Visible on mouse over** or **Never visible**). They show on mouse over by default. Hiding them does not disable the wheel, the pinch or the trackpad.
 
 ## Older history
 
-Scroll back toward the oldest bar and DegenView loads 1,000 more candles at a time, up to 100,000. Binance, Coinbase and Alpaca do this. DEXScreener does it on 1H only, and CoinGecko, prediction markets and CoinMarketCap do not.
+Scroll back toward the oldest bar and DegenView loads 1,000 more candles at a time, up to 100,000. Binance, Coinbase, OKX, Bybit, Gate.io, MEXC and Alpaca do this. Gate.io reaches back about 8,900 candles, and Kraken has only its newest 720. DEXScreener does it on 1H only, and CoinGecko, prediction markets and CoinMarketCap do not.
 
 New live bars move the view only if the newest bar is on screen. If you are looking at older bars, they stay put.
 

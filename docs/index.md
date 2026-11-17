@@ -19,7 +19,7 @@ hero:
 
 features:
   - title: Markets in one place
-    details: Search Binance, Coinbase, CoinGecko, DEXScreener, Alpaca stocks, Polymarket, Kalshi and CoinMarketCap indices from one box.
+    details: Search Binance, Coinbase, OKX, Kraken, Bybit, Gate.io, MEXC, CoinGecko, DEXScreener, Alpaca stocks, Polymarket, Kalshi and CoinMarketCap indices from one box.
     link: /markets/adding-charts
   - title: Charts you control
     details: 18 chart types, 25 built-in indicators, four price scales, linked charts, templates and one-click snapshots.
