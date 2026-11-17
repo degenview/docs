@@ -78,7 +78,7 @@ Up to three markets start open; with more, the cards start folded and the page r
 ## Good to know
 
 - **No limit.** Add as many markets as you like. Requests go out a few at a time and each market refreshes less often as more are active, so a big list loads in turn rather than all at once. Hidden markets are not loaded. A market compared on two charts is loaded once.
-- **History.** A market loads as far back as the chart does and pages further as you scroll back. Binance markets update live; others refresh every few seconds.
+- **History.** A market loads as far back as the chart does and pages further as you scroll back. Binance, OKX, Kraken, Bybit, Gate.io and MEXC markets update live; others refresh every few seconds.
 - **Replay.** During [replay](/trading/replay) compared markets show only up to the replay position, in the lines, the crosshair, the legend and the percentages.
 - **Snapshots.** A [snapshot](/charts/snapshots) includes the visible lines and tags.
 - **Layouts.** Compared markets are saved with the chart in your layout and sync with [iCloud](/settings/icloud-sync). A build that does not know about Compare drops them the next time it saves that layout.

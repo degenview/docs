@@ -6,6 +6,14 @@ Quick answers to common problems. Each one links to the page with the full story
 
 If a refresh fails, DegenView keeps the last data on screen and shows a pill such as **Couldn't refresh · showing the last result**, or **Binance rate limit reached · showing the last result** with the provider's name. Free data sources limit how often you can ask. Wait, and DegenView tries again by itself. See [Data sources](/markets/data-sources).
 
+## Data does not load behind a proxy or VPN
+
+Open **Settings ▸ Network** and read the badge. **Connecting directly** while your VPN or network needs a proxy means DegenView found none: choose **Manual** and enter the proxy's host and port, or start DegenView with `HTTPS_PROXY` set. If a local service stops working, add its host under **Hosts that connect directly**. Live price feeds need an HTTP or SOCKS5 proxy. See [Network and proxy](/settings/network).
+
+## A chart from Bybit, Gate.io or another exchange says it is unavailable
+
+A few exchanges refuse requests from some countries, and the chart shows a warning instead of candles. Try a different exchange for the same coin, or a VPN or proxy that exits elsewhere (see [Network and proxy](/settings/network)). Kraken allows one request every few seconds, so its charts refresh slowly between live updates. See [Data sources](/markets/data-sources).
+
 ## I cannot add a stock chart
 
 US stocks and ETFs need free Alpaca API keys. Open **Settings ▸ Alpaca**, enter your **API Key ID** and **Secret Key**, and click **Save**. Without keys, the stocks tab says **Set up Alpaca before adding a stock chart.** See [Data sources](/markets/data-sources).

@@ -40,7 +40,14 @@ Shortcuts that act on a chart use the focused chart, and are ignored while you t
 | Copy chart picture | ⇧⌘S | Ctrl+Shift+S |
 | Copy chart picture link | ⌥S | Alt+S |
 
-Charts have no keyboard shortcuts for panning or zooming. See [Charts and navigation](/charts/charts).
+Charts have no keyboard shortcuts for panning or zooming, but the pointer has one modifier:
+
+| Action | macOS | Windows and Linux |
+|---|---|---|
+| Zoom around the pointer | ⌘ + scroll, or pinch on a trackpad | Ctrl + scroll, or pinch on a trackpad |
+| Zoom toward the newest bars | Scroll | Scroll |
+
+See [Charts and navigation](/charts/charts).
 
 ## Replay
 

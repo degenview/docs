@@ -16,6 +16,7 @@ Press âŒ˜, (Ctrl+, on Windows and Linux). On macOS you can also use **Settingsâ€
 | **Pine Studio** | The look of the code editor: editor themes, font, size and line height. See [Writing scripts](/pine/writing-scripts). |
 | **Alpaca** | Your **API Key ID** and **Secret Key**. Needed to chart US stocks and ETFs. See [Data sources](/markets/data-sources). |
 | **CoinMarketCap** | An optional key for higher rate limits. Without one, DegenView uses the public API. **Test Connection** checks a key. |
+| **Network** | Whether DegenView uses a proxy: **System**, **Manual** (HTTP or SOCKS5) or **Off**, and hosts that skip it. See [Network and proxy](/settings/network). |
 | **AI Assistant** | Provider, model and key for the Pine Studio assistant. The key is yours, and the assistant sends your script text to that provider. See [AI assistant](/pine/ai-assistant). |
 | **Notifications** | How price alerts are delivered: delivery on or off, sound, in-app banners and, on macOS, system notifications and the background agent. See [Delivery](/alerts/delivery). |
 | **Webhooks** | Web addresses that alerts can post to. See [Delivery](/alerts/delivery). |

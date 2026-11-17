@@ -120,6 +120,7 @@ export default defineConfig({
         text: 'Settings & updates',
         items: [
           { text: 'Settings reference', link: '/settings/reference' },
+          { text: 'Network & proxy', link: '/settings/network' },
           { text: 'iCloud Sync', link: '/settings/icloud-sync' },
           { text: 'Updates', link: '/settings/updates' },
         ],
