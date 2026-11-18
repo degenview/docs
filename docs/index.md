@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: Quick tour
       link: /getting-started/quick-tour
+    - theme: alt
+      text: r/degenview
+      link: https://www.reddit.com/r/degenview/
 
 features:
   - title: Markets in one place
