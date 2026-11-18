@@ -36,7 +36,7 @@ The **What syncs** switches let you turn off a kind of data for this Mac:
 
 ## What never syncs
 
-Market data caches, portfolio value history, webhook endpoints and their secrets, API keys, MCP access, and which windows and tabs are open. Alerts you sync arrive switched off on your other Macs, so each alert notifies from one Mac only.
+Market data caches, portfolio value history, webhook endpoints and their secrets, API keys, MCP access, which windows and tabs are open, and where the favorite-tools bar sits. Alerts you sync arrive switched off on your other Macs, so each alert notifies from one Mac only.
 
 ## Things to know
 

@@ -34,6 +34,28 @@ Below the menus are the **Ruler** and **Zoom in**, then the drawing options:
 **Zoom in** and **Zoom out** are in builds after v0.6.0-rc.14. **Zoom out** appears under **Zoom in** once there is a zoom to go back from.
 :::
 
+## Favorite tools
+
+Star the tools you use most and keep them one click away. Every row in the six menus has a star at its right end. Click it to add the tool to your favorites, and click it again to remove it. The menu stays open, and the star does not pick the tool.
+
+![A tool menu with starred rows](/images/drawings/favorites-menu.png)
+
+The first star you add makes a small bar appear over the chart, with one button for each favorite in the order you starred them.
+
+![The favorites bar](/images/drawings/favorites-bar.png)
+
+- Click a button to pick that tool, exactly as if you had chosen it from its menu. The tool in use is lit, and it stays in step with the strip. Click it again to put the tool down.
+- Drag the dotted grip on the left to move the bar. It stays inside the chart area when you resize the window, and DegenView remembers where you left it.
+- Right-click the bar and choose **Hide favorites toolbar** to put it away. Your stars are kept, and starring another tool shows the bar again.
+- Press Esc with the bar's menu open to close the menu. It does not cancel a drawing you are making.
+- Taking a star off the tool you are using does not put the tool down.
+
+Favorites are the same in every tab and window. They sync with [iCloud Sync](/settings/icloud-sync) as part of your preferences, but the bar's position and whether it is hidden stay on each Mac. The Crosshair, Ruler and Zoom in have no menu row, so they have no star.
+
+::: info Newer builds
+Favorite tools are newer than the last release candidate, so they may be missing from your build.
+:::
+
 ## How to draw
 
 1. Pick a tool from a menu. Hover a tile for about a quarter of a second to see its name.
