@@ -75,6 +75,7 @@ export default defineConfig({
           { text: 'Overview', link: '/pine/overview' },
           { text: 'Writing scripts', link: '/pine/writing-scripts' },
           { text: 'Using scripts on charts', link: '/pine/using-scripts' },
+          { text: 'Strategy reports', link: '/pine/strategy-reports' },
           { text: 'Debugger & profiler', link: '/pine/debugger-profiler' },
           { text: 'AI assistant', link: '/pine/ai-assistant' },
           { text: 'What Pine supports', link: '/pine/language' },
