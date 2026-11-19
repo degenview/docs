@@ -58,6 +58,7 @@ export default defineConfig({
           { text: 'Chart settings & templates', link: '/charts/settings-templates' },
           { text: 'Linked charts', link: '/charts/linked-charts' },
           { text: 'Snapshots', link: '/charts/snapshots' },
+          { text: 'Liquidations & taker flow', link: '/charts/liquidations-taker-flow' },
         ],
       },
       {
