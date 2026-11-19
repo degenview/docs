@@ -27,23 +27,25 @@ On a Heikin Ashi, Renko, Kagi, Line Break, Point & Figure or Range chart, a stra
 
 ## Simulation
 
-A backtest is one history, and trades happen in one order. The **Simulation** card on the Report tab asks how much of the result was luck in that order. It takes your closed trades and redraws them at random, with replacement, as many times as there are trades, and repeats this hundreds of times. Each run adds the drawn profits to the initial capital.
+A backtest is one history, and the wins and losses in it came out one way. The **Simulation** card on the Report tab asks how far the result could move if they had come out differently. It takes your closed trades and draws them at random, with replacement, as many times as there are trades, so a trade can turn up several times in one run and not at all in another. It repeats this hundreds of times. Each run adds the drawn profits to the initial capital.
+
+Drawing with replacement is what spreads the final equity: a run that happens to draw the big winners more often ends higher. The order of the draws only shapes the path, so it matters for the drawdown and not for where a run ends.
 
 The card shows:
 
-- **Final equity, median**, and **5th to 95th**: where nine runs in ten ended. A wide range means the result depends on the order of a few trades.
-- **Max drawdown, median** and **worst 5%**: the typical largest fall from a peak across the runs, and the fall that only one run in twenty was worse than.
-- **Chance of ending in loss**: the share of runs that finished below the initial capital.
-- A **fan chart** of equity along the trades: the shaded band is the 5th to 95th percentile, the line through it is the median, and the dashed line is the initial capital.
+- **Median result**, **5th percentile** and **95th percentile**: the profit at the end of the run in the middle, and the runs that ended lower than 95 in 100 and higher than 95 in 100. A wide gap between them means the result leans on a few trades turning up.
+- **Chance of a loss**: the share of runs that ended with less than the initial capital. A run that breaks even is not counted as a loss.
+- **Median drawdown** and **Drawdown, worst 5%**: the typical largest fall from a peak across the runs, and the fall that only one run in twenty was worse than. It can be over 100% when a run takes equity below zero.
+- A **fan chart** of equity along the trades: the shaded band is the middle 90% of runs, the line through it is the median, and the dashed line is the initial capital.
 
-You need at least 10 closed trades. With fewer, the card says how many it is waiting for.
+The simulation takes 10 to 20,000 closed trades. With fewer, the card says how many it is waiting for; with more, it says the list is too long, so the tab stays quick to open.
 
-The results are the same every time for the same trades: the random draws use a fixed seed, so reopening the report does not change the figures. The number of runs goes from 1,000 down to 200 as the trade list gets longer, to keep the report quick to open. The card is on the Report tab only; the chart settings do not show it.
+The results are the same every time for the same trades: the random draws use a fixed seed, so reopening the report does not change the figures. The number of runs goes from 1,000 down to 100 as the trade list gets longer. The card is on the Report tab only; the chart settings do not show it.
 
 ::: warning What the simulation can and cannot tell you
-- It reshuffles the trades you have. It says nothing about trades the strategy has not made, or about a market that behaves differently from the one tested.
+- It redraws the trades you have. It says nothing about trades the strategy has not made, or about a market that behaves differently from the one tested.
 - Profits are added as money. A strategy that sizes each trade as a percentage of equity would compound in real life, so the simulated range is an approximation for it.
-- Trades are treated as independent of each other. Strings of wins or losses that come from the market, not from chance, are broken up by the reshuffle.
+- Trades are treated as independent of each other. Strings of wins or losses that come from the market, not from chance, are broken up by the draws.
 :::
 
 Like every figure in DegenView, this is a tool for looking at a strategy, not advice. See [What Pine supports](/pine/language) for what the strategy emulator does and does not model.
