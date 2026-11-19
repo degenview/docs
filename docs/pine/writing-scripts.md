@@ -44,7 +44,7 @@ The preview starts on Binance BTCUSDT, 1D. Use the market picker to choose anoth
 | Tab | What it shows |
 | --- | --- |
 | **Inputs** | A control for each `input.*` in your script. Changes re-run it at once. Values are saved per script. |
-| **Report** | For strategies: figures, equity curve, trade list and alerts. |
+| **Report** | For strategies: figures, equity curve, trade list and a simulation of how much luck the trade order held. Also alerts. See [Strategy reports](/pine/strategy-reports). |
 | **Problems** | Errors and warnings. Click one to jump to its line. |
 | **Logs** | Output of `log.info()`, `log.warning()` and `log.error()`, with search and filters. |
 | **Profile** | Where the script spends its time. See [Debugger and profiler](/pine/debugger-profiler). |

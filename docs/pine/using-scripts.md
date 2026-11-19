@@ -45,7 +45,7 @@ If a script calls `log.info()`, `log.warning()` or `log.error()`, choose **Pine 
 
 ## Strategies
 
-A strategy places simulated trades on the chart's bars. Its results appear in **Chart settings ▸ Scripts**, under **Backtest**: figures, an equity curve and the trade list. The numbers come from candles only. There is no margin model, so a strategy is never margin-called. See [What Pine supports](/pine/language).
+A strategy places simulated trades on the chart's bars. Its results appear in **Chart settings ▸ Scripts**, under **Backtest**: figures, an equity curve and the trade list. The numbers come from candles only. There is no margin model, so a strategy is never margin-called. The Report tab in Pine Studio goes further, with a simulation of the trade order. See [Strategy reports](/pine/strategy-reports) and [What Pine supports](/pine/language).
 
 ## Alerts
 
