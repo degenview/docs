@@ -59,6 +59,7 @@ export default defineConfig({
           { text: 'Linked charts', link: '/charts/linked-charts' },
           { text: 'Snapshots', link: '/charts/snapshots' },
           { text: 'Liquidations & taker flow', link: '/charts/liquidations-taker-flow' },
+          { text: 'Order book', link: '/charts/order-book' },
         ],
       },
       {

@@ -24,7 +24,7 @@ Volume exists for the exchanges (Binance, Coinbase, OKX, Kraken, Bybit, Gate.io 
 
 ## How fresh is the data
 
-Binance, OKX, Kraken, Bybit, Gate.io and MEXC stream live candles. Coinbase, OKX, Kraken, Bybit and Gate.io also stream prices to [watchlists](/markets/watchlists). Every other provider is polled on a timer, more slowly for rate-limited ones. The [Liquidations and taker flow](/charts/liquidations-taker-flow) panel listens to public Binance and Bybit sockets for as long as it is open, with no key. If a refresh fails, the chart keeps the last data and shows a pill such as **Couldn't refresh · showing the last result**. Background tabs and hidden windows pause their feeds.
+Binance, OKX, Kraken, Bybit, Gate.io and MEXC stream live candles. Coinbase, OKX, Kraken, Bybit and Gate.io also stream prices to [watchlists](/markets/watchlists). Every other provider is polled on a timer, more slowly for rate-limited ones. The [Liquidations and taker flow](/charts/liquidations-taker-flow) panel listens to public Binance and Bybit sockets for as long as it is open, with no key, and so does its [order book](/charts/order-book). If a refresh fails, the chart keeps the last data and shows a pill such as **Couldn't refresh · showing the last result**. Background tabs and hidden windows pause their feeds.
 
 ## Set up Alpaca for stocks
 
