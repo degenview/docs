@@ -33,3 +33,7 @@ Pine Script and TradingView are trademarks of TradingView, Inc. DegenView is not
 ## Where to go next
 
 New here? Read [Installation](/getting-started/installation), then take the [quick tour](/getting-started/quick-tour).
+
+## Community and help
+
+Questions, bug reports and ideas are welcome on the [Discord server](https://discord.gg/ANVqhRxGFt), on [r/degenview](https://www.reddit.com/r/degenview/) and as [GitHub issues](https://github.com/degenview/degenview/issues).

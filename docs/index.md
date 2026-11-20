@@ -19,6 +19,9 @@ hero:
     - theme: alt
       text: r/degenview
       link: https://www.reddit.com/r/degenview/
+    - theme: alt
+      text: Discord
+      link: https://discord.gg/ANVqhRxGFt
 
 features:
   - title: Markets in one place
