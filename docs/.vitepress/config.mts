@@ -17,7 +17,7 @@ export default defineConfig({
   ],
   themeConfig: {
     siteTitle: 'DegenView',
-    // Same links as the marketing header (the GitHub and Reddit icons are the social links below).
+    // Same links as the marketing header (the GitHub, Reddit and Discord icons are the social links below).
     nav: [
       { text: 'Features', link: 'https://degenview.app/#features', noIcon: true },
       { text: 'Pine Studio', link: 'https://degenview.app/pine-studio/', noIcon: true },
@@ -28,6 +28,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/degenview/degenview' },
       { icon: 'reddit', link: 'https://www.reddit.com/r/degenview/' },
+      { icon: 'discord', link: 'https://discord.gg/ANVqhRxGFt' },
     ],
     sidebar: [
       {
