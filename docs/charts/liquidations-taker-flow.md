@@ -4,12 +4,13 @@
 The market flow panel arrives after 0.6.0-rc.31.
 :::
 
-The market flow panel shows two things the candles do not: who is being forced out of their positions, and who is pushing the price. It docks at the right of a chart tab and has two modes, switched at the top of the panel:
+The market flow panel shows two things the candles do not: who is being forced out of their positions, and who is pushing the price. It docks at the right of a chart tab and has three modes, switched at the top of the panel:
 
 - **Liquidations** shows how much was force-liquidated across the market, and a tape of the latest ones.
 - **Taker flow** shows, for the market of the focused chart, whether buyers or sellers were the aggressors.
+- **Book** shows the order book of the focused chart's market. It has a page of its own: [Order book](/charts/order-book).
 
-Both read the exchanges' public sockets. They need no keys and no account, nothing is saved, and a panel only ever holds the last hour.
+Liquidations and Taker flow read the exchanges' public sockets. They need no keys and no account, nothing is saved, and a panel only ever holds the last hour.
 
 ## Open the panel
 
