@@ -14,7 +14,7 @@ DegenView is not affiliated with TradingView. For what is and is not supported a
 
 - **Warm-up on the chart's own symbol.** When a script asks for a higher timeframe of the symbol it is on, DegenView first loads about 300 earlier higher-timeframe bars. TradingView does not. Averages such as an EMA on that request settle sooner in DegenView, so the first values after the chart starts can differ.
 - **Stocks and futures.** Higher-timeframe buckets follow the calendar, not the exchange's session. A "1D" request on a stock can group bars differently from TradingView.
-- **`calc_bars_count`.** On TradingView it counts candles of the timeframe being requested, and the candle still forming is one of them. Several requests on the same timeframe in one script share one window, and the largest count wins for all of them. DegenView windows each request on its own count, so a script that mixes counts for one timeframe can see fewer bars than on TradingView.
+- **`calc_bars_count`.** On TradingView it counts candles of the timeframe being requested, and the candle still forming is one of them. Several requests on the same timeframe in one script share one window, and the largest count wins for all of them. DegenView windows each request on its own count, so a script that mixes counts for one timeframe can see fewer bars than on TradingView. A request inside another request's expression is windowed by its own count on TradingView; DegenView ignores the count there.
 - **`indicator(timeframe = ...)`.** It is not applied. The script runs on the chart's timeframe. Use `request.security` to read another timeframe.
 - **Candles come in 1H, 1D, 1W, 1M, 3M and 1Y.** There are no minute timeframes.
 
