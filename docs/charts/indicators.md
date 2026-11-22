@@ -82,6 +82,8 @@ Resizing panes by dragging is newer than the last release.
 
 Drag the line above a pane up or down. Over the line the pointer becomes a resize arrow.
 
+![A chart with a tall MACD pane and a short Stochastic pane under the candles](/images/charts/pane-resize.png)
+
 - The line under the candles trades height between the candles and the pane below it.
 - A line between two panes trades height between those two panes. The candles and the other panes keep their size.
 - A pane never gets smaller than its title strip and a few rows, and the candles keep room of their own, so a drag stops there.
