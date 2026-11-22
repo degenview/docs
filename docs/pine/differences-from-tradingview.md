@@ -29,7 +29,7 @@ DegenView is not affiliated with TradingView. For what is and is not supported a
 - **Locals with the same name in separate blocks.** Two blocks that each declare a variable with the same name can read each other's history through `[1]`. Give them different names.
 - **Functions not measured against TradingView.** These stay strict about `na`: when any value in the window is `na`, the result is `na`. TradingView's behaviour was not measured for them: `ta.cog`, `ta.cmo`, `ta.cci`, `ta.hma`, `ta.correlation`, `ta.mode`, `ta.mfi`, `ta.tsi`, `ta.kc`, `ta.vwma`, `ta.wpr`, `ta.rci`, `ta.highestbars`, `ta.lowestbars`, `ta.rising` and `ta.falling`. On a feed with gaps they can differ from TradingView.
 - **Infinities.** On TradingView `math.abs`, `math.sqrt`, `math.exp`, `math.floor`, `math.ceil`, `math.pow`, `math.avg`, `math.sign` and `math.log` of an infinity stay infinite, and `inf >= inf` and `inf <= inf` are `false`. DegenView gives `na` for some of these and `true` for the comparisons, so a script that relies on an infinity surviving a calculation can differ.
-- **Dividing by zero.** On TradingView `x / 0` is a compile error when the divisor is a literal zero (CE10224), and `na` when the divisor is a variable that holds zero. DegenView accepts the literal and gives an infinity for both. A ratio that can hit zero, such as a volume ratio, can differ.
+- **Dividing by a literal zero.** `x / 0` is a compile error on TradingView (CE10224). DegenView accepts it and gives an infinity. Dividing by a variable that holds zero gives an infinity on both.
 - **`max_bars_back`.** It is accepted, but DegenView does not model a fixed history buffer.
 
 ### Text
