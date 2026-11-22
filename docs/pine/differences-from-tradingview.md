@@ -14,7 +14,7 @@ DegenView is not affiliated with TradingView. For what is and is not supported a
 
 - **Warm-up on the chart's own symbol.** When a script asks for a higher timeframe of the symbol it is on, DegenView first loads about 300 earlier higher-timeframe bars. TradingView does not. Averages such as an EMA on that request settle sooner in DegenView, so the first values after the chart starts can differ.
 - **Stocks and futures.** Higher-timeframe buckets follow the calendar, not the exchange's session. A "1D" request on a stock can group bars differently from TradingView.
-- **`calc_bars_count`.** DegenView counts the requested number of bars in the unit of the series it reads. For a request on a timeframe shorter than the chart's, and for `request.security_lower_tf`, it counts chart bars. Whether TradingView counts the same way, and whether the candle still forming is one of the bars counted, was not measured.
+- **`calc_bars_count`.** On TradingView it counts candles of the timeframe being requested, and the candle still forming is one of them. Several requests on the same timeframe in one script share one window, and the largest count wins for all of them. DegenView windows each request on its own count, so a script that mixes counts for one timeframe can see fewer bars than on TradingView.
 - **`indicator(timeframe = ...)`.** It is not applied. The script runs on the chart's timeframe. Use `request.security` to read another timeframe.
 - **Candles come in 1H, 1D, 1W, 1M, 3M and 1Y.** There are no minute timeframes.
 
@@ -29,7 +29,7 @@ DegenView is not affiliated with TradingView. For what is and is not supported a
 - **Locals with the same name in separate blocks.** Two blocks that each declare a variable with the same name can read each other's history through `[1]`. Give them different names.
 - **Functions not measured against TradingView.** These stay strict about `na`: when any value in the window is `na`, the result is `na`. TradingView's behaviour was not measured for them: `ta.cog`, `ta.cmo`, `ta.cci`, `ta.hma`, `ta.correlation`, `ta.mode`, `ta.mfi`, `ta.tsi`, `ta.kc`, `ta.vwma`, `ta.wpr`, `ta.rci`, `ta.highestbars`, `ta.lowestbars`, `ta.rising` and `ta.falling`. On a feed with gaps they can differ from TradingView.
 - **Infinities.** On TradingView `math.abs`, `math.sqrt`, `math.exp`, `math.floor`, `math.ceil`, `math.pow`, `math.avg`, `math.sign` and `math.log` of an infinity stay infinite, and `inf >= inf` and `inf <= inf` are `false`. DegenView gives `na` for some of these and `true` for the comparisons, so a script that relies on an infinity surviving a calculation can differ.
-- **Dividing by a literal zero.** `x / 0` is a compile error on TradingView (CE10224). DegenView accepts it and gives an infinity. Dividing by a variable that holds zero was not compared.
+- **Dividing by zero.** On TradingView `x / 0` is a compile error when the divisor is a literal zero (CE10224), and `na` when the divisor is a variable that holds zero. DegenView accepts the literal and gives an infinity for both. A ratio that can hit zero, such as a volume ratio, can differ.
 - **`max_bars_back`.** It is accepted, but DegenView does not model a fixed history buffer.
 
 ### Text
