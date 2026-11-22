@@ -4,7 +4,7 @@ DegenView runs Pine Script **version 6** with its own engine. Most everyday indi
 
 ## What works
 
-- Indicators, strategies and libraries. A script can import your own libraries from Pine Studio.
+- Indicators, strategies and libraries. A script can import your own libraries from Pine Studio. See [Libraries](/pine/libraries).
 - Plots, fills, shapes, arrows, background and candle colours, labels, lines, boxes, tables, polylines and line fills.
 - Inputs of every common type: numbers, true/false, colours, text, time, price, source, symbol, session, timeframe and drop-down lists.
 - The `ta`, `math`, `str` and `color` libraries, plus arrays, maps and matrices.
