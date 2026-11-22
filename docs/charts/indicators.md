@@ -61,6 +61,35 @@ Each indicator on a chart is a chip in the header. Hover a chip to show its cont
 
 When there are more than three chips, the rest fold into a **+N** pill that opens a list. On a narrow chart all chips fold into one count pill.
 
+## Panes
+
+A Pine script or bundled indicator that does not draw on the price, such as MACD, Stochastic or ATR, gets a pane of its own under the candles. The panes share the chart's time axis and crosshair, and each has its own price scale. On a line chart there are no panes: every script draws over the line.
+
+Hover a pane to show its buttons in its top right corner:
+
+- **Move pane up** and **Move pane down** change the order of the panes. This is also the order of the scripts in **Chart settings ▸ Scripts**.
+- **Collapse pane** folds it to its title strip; **Expand pane** opens it again. The script keeps running.
+- **Maximize pane** gives it the whole chart but the time axis; **Restore pane** brings the candles back.
+- **Remove script from the chart** removes it.
+
+In **Chart settings ▸ Canvas**, **Buttons ▸ Pane** chooses when the buttons show, and **Pane separators** styles the line above each pane.
+
+### Resize a pane
+
+::: info Newer builds
+Resizing panes by dragging is newer than the last release.
+:::
+
+Drag the line above a pane up or down. Over the line the pointer becomes a resize arrow.
+
+- The line under the candles trades height between the candles and the pane below it.
+- A line between two panes trades height between those two panes. The candles and the other panes keep their size.
+- A pane never gets smaller than its title strip and a few rows, and the candles keep room of their own, so a drag stops there.
+
+Each pane's height is saved with its script, as a share of the chart's height. It stays after a restart, grows and shrinks with the window, and moves with the pane when you change the order. Panes you have never dragged split 30 % of the chart between them; a pane added later starts at that size and takes its room from the candles.
+
+Undo and redo of adding or removing a script leave the panes' heights and folded state as they are, and a script that comes back after a removal has the height it had. Collapsed and maximized panes have no line to drag, and the lines do nothing during **Select portion** or while you pick bars for a replay start or for Pine logs.
+
 ## Use the settings sheet instead
 
 Open **Chart settings** (click the market name) and choose the **Indicators** tab. It lists the five native indicators with a switch each, and the EMA period picker.
