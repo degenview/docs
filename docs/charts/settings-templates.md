@@ -22,7 +22,7 @@ The footer has **Remove Chart**, which asks you to confirm, and **Done**.
 
 ![Canvas tab](/images/charts/settings-canvas.png)
 
-The **Canvas** tab sets the **Background** (one colour or a gradient), vertical and horizontal grid lines, **Pane separators**, **Crosshair** (colour, thickness 1 to 4, style), **Watermark** (**Hidden**, **Symbol** or **Replay mode**), **OHLC values**, scale text and lines, **Buttons** (**Navigation** and **Pane**) and **Margins**. **Reset Canvas to Defaults** restores it all, except candle colours and the chart type.
+The **Canvas** tab sets the **Background** (one colour or a gradient), vertical and horizontal grid lines, **Pane separators** (the line you drag to [resize a pane](/charts/indicators#resize-a-pane)), **Crosshair** (colour, thickness 1 to 4, style), **Watermark** (**Hidden**, **Symbol** or **Replay mode**), **OHLC values**, scale text and lines, **Buttons** (**Navigation** and **Pane**) and **Margins**. **Reset Canvas to Defaults** restores it all, except candle colours and the chart type.
 
 ## Chart templates
 
