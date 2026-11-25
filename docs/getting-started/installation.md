@@ -67,6 +67,49 @@ DegenView opens an empty tab with a search box. Click it, type a symbol such as 
 
 DegenView checks for new versions and can install them from **Settings ▸ About**. See [Updates](/settings/updates) for the cases where it cannot update itself.
 
+## Uninstalling
+
+Removing the app does not remove your charts, watchlists, portfolios, alerts and scripts. They live in DegenView's data folder (see [Pine Studio](/pine/overview#where-your-scripts-live)) and stay there until you delete them. Back up anything you want to keep first.
+
+If you use [iCloud Sync](/settings/icloud-sync), open **Delete iCloud Data** in Settings before you uninstall if you want that copy gone too. Your data on the Mac stays.
+
+### macOS
+
+1. Quit DegenView.
+2. Open **Applications** and drag **DegenView** to the Trash.
+3. To remove your data, delete `~/Library/Application Support/es.nico.degenview`.
+4. To remove saved API keys, open **Keychain Access** and delete the DegenView items.
+
+If you installed with Homebrew, run `brew uninstall --zap --cask degenview@rc` instead of steps 2 and 3. It removes the app together with its data, cache and settings. API keys in the Keychain stay, so step 4 still applies.
+
+### Windows
+
+1. Quit DegenView.
+2. Open **Settings ▸ Apps ▸ Installed apps**, find **DegenView** and choose **Uninstall**. If you used the portable `.zip`, delete its folder.
+3. To remove your data, delete `%APPDATA%\es.nico.degenview`.
+4. To remove saved API keys, open Control Panel ▸ Credential Manager ▸ Windows Credentials and remove the entries named `es.nico.degenview…`.
+
+### Linux
+
+Delete the files you put in place, then your data:
+
+```bash
+rm ~/.local/bin/degenview
+rm ~/.local/share/icons/hicolor/512x512/apps/degenview.png
+rm ~/.local/share/applications/degenview.desktop
+rm -r ~/.local/share/es.nico.degenview
+```
+
+Delete the unpacked tarball folder too. API keys are in the system's Secret Service. Remove the DegenView entries in your keyring app, such as Seahorse or KWalletManager.
+
+### Flatpak
+
+```bash
+flatpak uninstall --delete-data es.nico.degenview
+```
+
+`--delete-data` also removes your data and the keys in the app-private store. Leave it out to keep them for a later reinstall. If you added the DegenView repository, remove it with `flatpak remote-delete degenview`.
+
 ## Building from source
 
 Developers can build DegenView with Rust. The steps are in the [project README](https://github.com/degenview/degenview).
