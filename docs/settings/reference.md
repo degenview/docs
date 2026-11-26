@@ -12,7 +12,7 @@ Press âŒ˜, (Ctrl+, on Windows and Linux). On macOS you can also use **Settingsâ€
 
 | Page | What it does |
 |---|---|
-| **Appearance** | Theme (**System**, **Light**, **Dark**) and what tabs show. See [Appearance and themes](/workspace/appearance). |
+| **Appearance** | Theme (**System**, **Light**, **Dark**), what tabs show and the interface language. See [Appearance and themes](/workspace/appearance) and [Language](/workspace/language). |
 | **Pine Studio** | The look of the code editor: editor themes, font, size and line height. See [Writing scripts](/pine/writing-scripts). |
 | **Alpaca** | Your **API Key ID** and **Secret Key**. Needed to chart US stocks and ETFs. See [Data sources](/markets/data-sources). |
 | **CoinMarketCap** | An optional key for higher rate limits. Without one, DegenView uses the public API. **Test Connection** checks a key. |
