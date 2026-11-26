@@ -12,6 +12,10 @@ DegenView can look dark or light, or follow your computer. The choice applies to
 
 **Dark** is the default. **System** follows your computer's light or dark setting and changes when it does.
 
+## Language
+
+The same page sets the interface language. See [Language](/workspace/language).
+
 ## Chart colours are separate
 
 Your own chart colours do not depend on the theme. If you pick a colour for rising candles, it stays that colour in both themes. A colour you never set follows the theme. Chart colours, backgrounds and grid lines are set per chart. See [Chart settings and templates](/charts/settings-templates).

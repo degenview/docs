@@ -115,6 +115,7 @@ export default defineConfig({
           { text: 'Tabs & windows', link: '/workspace/tabs-windows' },
           { text: 'Layouts', link: '/workspace/layouts' },
           { text: 'Appearance & themes', link: '/workspace/appearance' },
+          { text: 'Language', link: '/workspace/language' },
         ],
       },
       {
