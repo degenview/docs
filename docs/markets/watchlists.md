@@ -47,7 +47,7 @@ The magnifier button filters the list by name (**Filter symbols**).
 
 ## Import format
 
-Use one market per line as `SOURCE:SYMBOL`, for example `BINANCE:BTCUSDT` or `COINBASE:ETH-USD`. A line starting with `###` becomes a section. Sources are BINANCE, COINBASE, OKX, KRAKEN, BYBIT, GATEIO, MEXC, COINGECKO, DEXSCREENER, ALPACA, POLYMARKET, KALSHI and CMC. A comma-separated TradingView-style line also works. Unsupported markets are skipped and reported.
+Use one market per line as `SOURCE:SYMBOL`, for example `BINANCE:BTCUSDT` or `COINBASE:ETH-USD`. A Binance perpetual is written `BINANCE:BTCUSDT.P` (builds after 0.6.0-rc.37). A line starting with `###` becomes a section. Sources are BINANCE, COINBASE, OKX, KRAKEN, BYBIT, GATEIO, MEXC, COINGECKO, DEXSCREENER, ALPACA, POLYMARKET, KALSHI and CMC. A comma-separated TradingView-style line also works. Unsupported markets are skipped and reported.
 
 ## Prices
 

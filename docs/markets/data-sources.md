@@ -6,7 +6,7 @@ DegenView gets candles and quotes straight from public market-data providers. Mo
 
 | Provider | Section in Add Chart | Good to know |
 | --- | --- | --- |
-| **Binance** | Crypto | Live candle updates. Older history loads as you scroll back. |
+| **Binance** | Crypto | Spot markets and [USDⓈ-M perpetual futures](#binance-perpetual-futures). Live candle updates. Older history loads as you scroll back. |
 | **Coinbase** | Crypto | Refreshes every few seconds. Older history loads as you scroll back. |
 | **OKX** | Crypto | Spot markets, no key. Live candle updates. Older history loads as you scroll back. |
 | **Kraken** | Crypto | Spot markets, no key. Live candle updates. Keeps only its newest 720 candles per timeframe (12 hours of 1m, 30 days of 1h, 2 years of 1D) and allows one request every few seconds, so there is little history to scroll back to and it refreshes slowly between live updates. |
@@ -21,6 +21,22 @@ DegenView gets candles and quotes straight from public market-data providers. Mo
 | **CoinMarketCap** | CoinMarketCap | Altcoin Season Index, Altcoin Season History, Fear & Greed Index and Fear & Greed History. |
 
 Volume exists for the exchanges (Binance, Coinbase, OKX, Kraken, Bybit, Gate.io and MEXC), DEXScreener and Alpaca. CoinGecko has none. Prediction markets and CoinMarketCap charts are drawn as lines: they have no chart-type choice and no volume bars, and the indicator picker offers no Pine scripts on them. CoinMarketCap charts also have no indicators or scripts, so their chart settings offer only **Appearance** and **Canvas**.
+
+## Binance perpetual futures
+
+::: info Newer builds
+Binance perpetual futures arrive after 0.6.0-rc.37.
+:::
+
+Binance lists a USDⓈ-M perpetual next to many spot pairs. Its price differs from spot, so DegenView treats it as a market of its own, written with `.P` at the end: `BTCUSDT` is spot, `BTCUSDT.P` is the perpetual. Search for `btc` and the perpetual sits right under the spot pair, labelled **Perpetual**.
+
+A perpetual chart has history, live candles and its own [order book](/charts/order-book). You can put it in a [watchlist](/markets/watchlists), set price alerts on it and draw it over a spot chart with [Compare](/charts/compare).
+
+What is different from spot:
+
+- There are no **1s** candles, or other lengths made from seconds.
+- It cannot be added to a portfolio as an asset.
+- Funding rate, mark price and leverage are not shown, and coin-margined and dated futures are not listed.
 
 ## How fresh is the data
 
