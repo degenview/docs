@@ -48,4 +48,4 @@ If a script fails while running, it stops and keeps the bars it already drew. Wa
 5. **Try a smaller version.** Remove parts until it runs, or use the [debugger](/pine/debugger-profiler) to see where values go wrong.
 6. **Ask the assistant.** The [AI assistant](/pine/ai-assistant) can explain an error.
 
-Community scripts are the work of their authors. Check a script's licence before you reuse it. Results can differ from TradingView's because the data sources differ.
+Community scripts are the work of their authors. Check a script's licence before you reuse it. Results can differ from TradingView's because the data sources differ. See [Differences from TradingView](/pine/differences-from-tradingview) for the full list.

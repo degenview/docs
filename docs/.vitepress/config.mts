@@ -83,6 +83,7 @@ export default defineConfig({
           { text: 'Debugger & profiler', link: '/pine/debugger-profiler' },
           { text: 'AI assistant', link: '/pine/ai-assistant' },
           { text: 'What Pine supports', link: '/pine/language' },
+          { text: 'Differences from TradingView', link: '/pine/differences-from-tradingview' },
         ],
       },
       {

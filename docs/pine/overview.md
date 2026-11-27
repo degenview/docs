@@ -63,3 +63,4 @@ Because scripts are plain files, you can also vibe-code them with a coding agent
 - [Debugger and profiler](/pine/debugger-profiler): find bugs and slow lines.
 - [AI assistant](/pine/ai-assistant): ask a model to explain or change a script.
 - [What Pine supports](/pine/language): what works, and what does not.
+- [Differences from TradingView](/pine/differences-from-tradingview): where results still differ.
