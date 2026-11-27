@@ -24,6 +24,8 @@ Search for an asset ("btc"), a market ("BTCUSD", "btc/usd" and "BTC-USD" all mea
 
 Every dollar market of the asset (USD, USDT, USDC and the other dollar coins) comes first, from every exchange that lists it, so you can pick Binance's `BTCUSDT` or Coinbase's `BTC-USD` at a glance. Markets that merely include the asset in another currency, such as `BTCTRY`, follow below them, and unrelated names come last.
 
+A Binance [perpetual](/markets/data-sources#binance-perpetual-futures), such as `BTCUSDT.P`, is listed right after its spot pair and labelled **Perpetual**. (Builds after 0.6.0-rc.37.)
+
 - **All, Stocks, Crypto, Watchlists**: the tabs narrow the results. **All** searches crypto and stocks together. **Watchlists** lists the crypto and stock markets of your [watchlists](/markets/watchlists), grouped by list; type to filter them. Press **Tab** to move between the tabs.
 - **All venues**: choose one exchange to see only its markets.
 - **A check** marks a market that is already on a chart in this tab. A **+** on the highlighted row adds the market as a new chart instead of replacing the current one.

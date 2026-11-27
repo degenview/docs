@@ -12,7 +12,9 @@ It reads the exchange's public socket. It needs no key and no account, and nothi
 
 Click the flame in the toolbar (**Show Market Flow**), then **Book** at the top of the panel. Close it with the cross in the panel's header, or the flame again.
 
-The book follows the focused chart. It shows the book of that exact market on that chart's own exchange, so the prices match the candles. Charts on **Binance** and **Bybit** have a book; on any other chart the panel says **No order book**. Charts are spot markets, so these are spot books.
+The book follows the focused chart. It shows the book of that exact market on that chart's own exchange, so the prices match the candles. Charts on **Binance** and **Bybit** have a book; on any other chart the panel says **No order book**.
+
+A spot chart shows the spot book. A [Binance perpetual](/markets/data-sources#binance-perpetual-futures) chart, such as `BTCUSDT.P`, shows the futures book (builds after 0.6.0-rc.37). The line at the bottom of the panel names which: **Binance spot** or **Binance perp**.
 
 The panel only listens while it is drawn. Switch the chart to another market and the book starts over for the new one. Close the panel, or leave the tab, and the socket closes within a few seconds.
 
@@ -69,7 +71,7 @@ The size menu (**≥ $10K**, **≥ $100K** or **≥ $1M**) highlights large trad
 | **No order book** | The focused chart is not on Binance or Bybit, or is not a market. |
 | **Connecting to Binance** (or Bybit) | The book has not arrived yet. It usually takes a second or two. |
 | **Reconnecting to Binance** (or Bybit) | The connection dropped. The book is left out rather than shown out of date, and is back as soon as the connection is. |
-| **Binance does not list BTCXYZ** | The exchange has no such market. |
+| **Binance spot does not list BTCXYZ** (or **Binance perp**) | The exchange has no such market. |
 | **Waiting for trades** | Nothing has traded since you opened the panel. |
 
 If an exchange is unreachable because of a VPN or proxy, see [Network and proxy](/settings/network).
